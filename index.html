@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shreya Chandrasekaran · CAD Portfolio</title>
+  <meta name="description" content="Interactive CAD portfolio showcasing selected projects with 3D models, videos, and photos." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Shreya Chandrasekaran</h1>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h2>Mechanical & CAD Portfolio</h2>
+        <p>Interactive models, motion studies, and build photos. Outcome‑oriented, lightweight, and recruiter‑friendly.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="Shreya_Chandrasekaran_Resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+        </div>
+      </div>
+      <model-viewer class="hero-model"
+        src="models/camera_clip_prototype.glb"
+        camera-controls
+        touch-action="pan-y"
+        exposure="1"
+        shadow-intensity="1"
+        environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+        poster="img/camera_clip_prototype_poster.jpg"
+        loading="lazy"
+        ar ar-modes="webxr scene-viewer quick-look">
+      </model-viewer>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h3>Projects</h3>
+      <div class="grid">
+
+        <!-- Camera Clip — Working Prototype -->
+        <article class="card">
+          <model-viewer
+            src="models/camera_clip_prototype.glb"
+            camera-controls
+            touch-action="pan-y"
+            environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+            shadow-intensity="1"
+            poster="img/camera_clip_prototype_poster.jpg"
+            interaction-prompt="auto"
+            reveal="interaction">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Camera Clip — Working Prototype</h4>
+            <ul>
+              <li>Quick‑access; single‑hand attach/detach &lt; 2 s.</li>
+              <li>3D‑printed (PLA+/FDM); iterated hinge & latch for smooth action.</li>
+              <li>Bench‑tested tolerances; zero accidental detachment in tests.</li>
+            </ul>
+            <div class="tags">
+              <span>Fusion 360</span><span>Prototyping</span><span>DFM</span>
+            </div>
+            <div class="links">
+              <button class="btn small" data-dialog="camera-clip-modal">View details (video + photos)</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Camera Clip — Concept A -->
+        <article class="card">
+          <model-viewer
+            src="models/camera_clip_conceptA.glb"
+            camera-controls
+            touch-action="pan-y"
+            environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+            shadow-intensity="1"
+            poster="img/camera_clip_conceptA_poster.jpg"
+            interaction-prompt="auto"
+            reveal="interaction">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Camera Clip — Concept A</h4>
+            <ul>
+              <li>CAD‑only concept exploring compact latch geometry.</li>
+              <li>Optimized belt interface and fast alignment.</li>
+              <li>Trade‑offs noted for assembly and service.</li>
+            </ul>
+            <div class="tags">
+              <span>Fusion 360</span><span>Mechanisms</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Camera Clip — Concept B -->
+        <article class="card">
+          <model-viewer
+            src="models/camera_clip_conceptB.glb"
+            camera-controls
+            touch-action="pan-y"
+            environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+            shadow-intensity="1"
+            poster="img/camera_clip_conceptB_poster.jpg"
+            interaction-prompt="auto"
+            reveal="interaction">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Camera Clip — Concept B</h4>
+            <ul>
+              <li>CAD‑only; emphasizes material savings and footprint.</li>
+              <li>Alternate hinge placement & locking feel.</li>
+              <li>Notes for future prototyping.</li>
+            </ul>
+            <div class="tags">
+              <span>Fusion 360</span><span>Design Alternatives</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Shopping Cart CAD -->
+        <article class="card">
+          <model-viewer
+            src="models/shopping_cart.glb"
+            camera-controls
+            touch-action="pan-y"
+            environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+            shadow-intensity="1"
+            poster="img/shopping_cart_poster.jpg"
+            interaction-prompt="auto"
+            reveal="interaction">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Shopping Cart — CAD Concept</h4>
+            <ul>
+              <li>Frame and basket layout modeled for stability & nesting.</li>
+              <li>Ergonomics and handle reach considered.</li>
+              <li>Manufacturing assumptions documented.</li>
+            </ul>
+            <div class="tags">
+              <span>Onshape/Fusion</span><span>CAD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Art Centre + Gallery -->
+        <article class="card">
+          <model-viewer
+            src="models/art_centre_gallery.glb"
+            camera-controls
+            touch-action="pan-y"
+            environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
+            shadow-intensity="1"
+            poster="img/art_centre_gallery_poster.jpg"
+            interaction-prompt="auto"
+            reveal="interaction">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Art Centre + Gallery</h4>
+            <ul>
+              <li>SketchUp model; physical scale model with lighting & landscape.</li>
+              <li>Gallery circulation, daylight, and façade rhythm studied.</li>
+              <li>Site planning & materials palette explored.</li>
+            </ul>
+            <div class="tags">
+              <span>SketchUp</span><span>Scale Model</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mini Electric Piano (Video) -->
+        <article class="card">
+          <img class="media-img" src="img/piano_cover.jpg" alt="Mini electric piano on breadboard" />
+          <div class="card-body">
+            <h4>Mini Electric Piano (Breadboard)</h4>
+            <ul>
+              <li>Passive buzzer, resistors, push buttons; breadboard build.</li>
+              <li>Basic circuit design and systematic debugging.</li>
+              <li>Wiring map and parts list documented.</li>
+            </ul>
+            <div class="tags">
+              <span>Electronics</span><span>Prototyping</span>
+            </div>
+            <div class="links">
+              <button class="btn small" data-dialog="piano-modal">Watch video</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section alt">
+    <div class="container narrow">
+      <h3>About</h3>
+      <p>Mechanical engineering student focused on human‑centered design, robust mechanisms, and rapid prototyping. I enjoy turning fuzzy requirements into manufacturable parts with clear tolerances and test plans.</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h3>Skills</h3>
+      <ul class="pill-list">
+        <li>Fusion 360</li><li>Onshape</li><li>SketchUp</li><li>Blender (glTF)</li>
+        <li>DFM/DFA</li><li>Tolerance Stack‑ups</li><li>3D Printing (FDM)</li>
+        <li>Technical Documentation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hobbies" class="section alt">
+    <div class="container">
+      <h3>Hobbies</h3>
+      <ul class="bullets">
+        <li>DIY builds — printed, assembled, and tested small fixtures and racks.</li>
+        <li>Trekking — route planning, safety gear, and endurance training.</li>
+        <li>Photography — product and assembly documentation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container narrow">
+      <h3>Contact</h3>
+      <p><a href="mailto:shreya_chandrasekaran@outlook.com">shreya_chandrasekaran@outlook.com</a> · 
+         <a href="https://www.linkedin.com/in/shreyachandrasekaran" target="_blank" rel="noopener">LinkedIn</a> · 
+         <a href="https://github.com/shreya-chandrasekaran" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Shreya Chandrasekaran</small>
+    </div>
+  </footer>
+
+  <!-- ===== Modals (Details / Videos / Photos) ===== -->
+
+  <!-- Camera Clip modal -->
+  <dialog id="camera-clip-modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h4>Camera Clip — Motion & Prototype Gallery</h4>
+      <div class="modal-content">
+        <div class="video-wrap">
+          <video controls preload="metadata" poster="img/camera_clip_prototype_poster.jpg">
+            <source src="media/camera_clip_motion.mp4" type="video/mp4">
+            <!-- Optional fallback: <source src="media/camera_clip_motion.webm" type="video/webm"> -->
+            Your browser does not support the video tag.
+          </video>
+          <p class="muted small">Motion study exported from Fusion 360. Keep MP4 under ~100&nbsp;MB for GitHub.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="img/camera_clip_photo1.jpg" alt="Prototype photo 1" />
+          <img src="img/camera_clip_photo2.jpg" alt="Prototype photo 2" />
+          <img src="img/camera_clip_photo3.jpg" alt="Prototype photo 3" />
+          <!-- Add more as needed -->
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Piano video modal -->
+  <dialog id="piano-modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h4>Mini Electric Piano — Demo</h4>
+      <div class="modal-content">
+        <div class="video-wrap">
+          <video controls preload="metadata" poster="img/piano_cover.jpg">
+            <source src="media/mini_piano_demo.mp4" type="video/mp4">
+            <!-- Optional fallback: <source src="media/mini_piano_demo.webm" type="video/webm"> -->
+            Your browser does not support the video tag.
+          </video>
+          <p class="muted small">Quick demo of button mapping and buzzer output.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
