@@ -56,7 +56,7 @@
         <!-- Camera Clip — Working Prototype -->
         <article class="card">
           <model-viewer
-            src="models/camera_clip_prototype.glb"
+            src="models/CameraClip.glb"
             camera-controls
             touch-action="pan-y"
             environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
@@ -81,10 +81,10 @@
           </div>
         </article>
 
-        <!-- Camera Clip — Concept A -->
+        <!-- Waist Holster -->
         <article class="card">
           <model-viewer
-            src="models/camera_clip_conceptA.glb"
+            src="models/WaistHolster.glb"
             camera-controls
             touch-action="pan-y"
             environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
@@ -94,7 +94,7 @@
             reveal="interaction">
           </model-viewer>
           <div class="card-body">
-            <h4>Camera Clip — Concept A</h4>
+            <h4>Camera Holster</h4>
             <ul>
               <li>CAD‑only concept exploring compact latch geometry.</li>
               <li>Optimized belt interface and fast alignment.</li>
@@ -105,34 +105,38 @@
             </div>
           </div>
         </article>
-
-        <!-- Shopping Cart — Toggle between v1 and v2 -->
+        
+        <!-- Shopping Cart — Toggle between Open and Folded -->
         <article class="card">
           <model-viewer id="sc-viewer"
-            src="models/shopping_cart_v1.glb"
+            src="models/shopping_cart_open.glb"
             camera-controls touch-action="pan-y"
             environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
             shadow-intensity="1"
-            poster="img/shopping_cart_v1_poster.jpg"
+            poster="img/shopping_cart_open_poster.jpg"
             interaction-prompt="auto" reveal="interaction">
           </model-viewer>
+          
           <div class="card-body">
             <h4>Shopping Cart — CAD Concepts</h4>
             
             <!-- Toggle buttons -->
             <div class="links sc-toggle">
-              <button class="btn small" data-sc-variant="v1">Concept v1</button>
-              <button class="btn small" data-sc-variant="v2">Concept v2</button>
+              <button class="btn small active" data-sc-variant="open">Open</button>
+              <button class="btn small" data-sc-variant="folded">Folded</button>
             </div>
             
-            <!-- Bullets update when you toggle -->
-            <ul id="sc-bullets"></ul>
+            <!-- (Optional) bullets that stay the same for both, or make 2 sets and swap in JS -->
+            <ul class="bullets">
+              <li>Ergonomics & nesting considered; caster spacing tuned.</li>
+              <li>Material + assembly trade-offs documented.</li>
+            </ul>
             
             <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
           </div>
         </article>
 
-
+            
         <!-- Art Centre + Gallery -->
         <article class="card">
           <model-viewer
