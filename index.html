@@ -131,30 +131,32 @@
           </div>
         </article>
 
-        <!-- Shopping Cart CAD -->
+        <!-- Shopping Cart — Toggle between v1 and v2 -->
         <article class="card">
-          <model-viewer
-            src="models/shopping_cart.glb"
-            camera-controls
-            touch-action="pan-y"
+          <model-viewer id="sc-viewer"
+            src="models/shopping_cart_v1.glb"
+            camera-controls touch-action="pan-y"
             environment-image="https://modelviewer.dev/shared-assets/environments/industrial.hdr"
             shadow-intensity="1"
-            poster="img/shopping_cart_poster.jpg"
-            interaction-prompt="auto"
-            reveal="interaction">
+            poster="img/shopping_cart_v1_poster.jpg"
+            interaction-prompt="auto" reveal="interaction">
           </model-viewer>
           <div class="card-body">
-            <h4>Shopping Cart — CAD Concept</h4>
-            <ul>
-              <li>Frame and basket layout modeled for stability & nesting.</li>
-              <li>Ergonomics and handle reach considered.</li>
-              <li>Manufacturing assumptions documented.</li>
-            </ul>
-            <div class="tags">
-              <span>Onshape/Fusion</span><span>CAD</span>
+            <h4>Shopping Cart — CAD Concepts</h4>
+            
+            <!-- Toggle buttons -->
+            <div class="links sc-toggle">
+              <button class="btn small" data-sc-variant="v1">Concept v1</button>
+              <button class="btn small" data-sc-variant="v2">Concept v2</button>
             </div>
+            
+            <!-- Bullets update when you toggle -->
+            <ul id="sc-bullets"></ul>
+            
+            <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
           </div>
         </article>
+
 
         <!-- Art Centre + Gallery -->
         <article class="card">
