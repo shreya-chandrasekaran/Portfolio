@@ -48,78 +48,37 @@
   });
 })();
 
-// 3) Shopping cart Open/Folded toggle
-(() => {
-  // Delegate clicks from any ".sc-toggle" group
-  document.addEventListener('click', async (e) => {
-    const btn = e.target.closest('.sc-toggle [data-sc-variant]');
+// 3) Shopping cart toggle (single, robust, per-button data-src)
+document.addEventListener('DOMContentLoaded', () => {
+  // Optional: log model-viewer load/errors for quick debug
+  document.querySelectorAll('model-viewer').forEach(mv => {
+    mv.addEventListener('load', () => console.debug('[model-viewer] loaded:', mv.src));
+    mv.addEventListener('error', (ev) => console.error('[model-viewer] error for', mv.src, ev));
+  });
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.sc-toggle [data-src]');
     if (!btn) return;
 
-    const group = btn.closest('.sc-toggle');
     const card = btn.closest('.card');
-    const mv = card?.querySelector('model-viewer.sc-model');
-    if (!group || !mv) return;
+    const mv = card?.querySelector('model-viewer');
+    const nextSrc = btn.getAttribute('data-src');
 
-    const variant = btn.getAttribute('data-sc-variant'); // "open" or "folded"
-    const openSrc = mv.getAttribute('data-open-src');
-    const foldedSrc = mv.getAttribute('data-folded-src');
+    if (!mv) { console.warn('[Cart toggle] No model-viewer found in card'); return; }
+    if (!nextSrc) { console.warn('[Cart toggle] Button missing data-src'); return; }
 
-    const nextSrc = variant === 'folded' ? foldedSrc : openSrc;
-    if (!nextSrc) return;
-
-    // Optional: Preload the next model once (cache helps avoid flicker)
-    if (!mv.__preloaded) {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'fetch';
-      link.href = nextSrc;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-      mv.__preloaded = true;
-    }
-
-    // UI: active state + aria
-    group.querySelectorAll('[data-sc-variant]').forEach(b => {
+    // Update UI states
+    const group = btn.closest('.sc-toggle');
+    group.querySelectorAll('[data-src]').forEach(b => {
       b.classList.toggle('active', b === btn);
       b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
     });
 
-    // Swap the model
-    mv.setAttribute('src', nextSrc);
+    // Swap the model; property assignment is most reliable
+    console.debug('[Cart toggle] Setting src ->', nextSrc);
+    mv.src = nextSrc;
 
-    // Optional niceties: briefly enable poster-style reveal
+    // Force reveal behavior again (optional)
     mv.setAttribute('reveal', 'auto');
-
-    // If you want to adjust exposure/env per variant, do it here:
-    // if (variant === 'folded') {
-    //   mv.setAttribute('exposure', '0.9');
-    // } else {
-    //   mv.setAttribute('exposure', '1');
-    // }
   });
-})();
-
-// --- Simple toggle for any ".sc-toggle" group ---
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.sc-toggle [data-src]');
-  if (!btn) return;
-
-  const card = btn.closest('.card');
-  const mv = card?.querySelector('model-viewer');
-  const nextSrc = btn.dataset.src;
-
-  if (!mv || !nextSrc) return;
-
-  // Update active state + a11y
-  const group = btn.closest('.sc-toggle');
-  group.querySelectorAll('[data-src]').forEach(b => {
-    b.classList.toggle('active', b === btn);
-    b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
-  });
-
-  // Swap the model (property assign is most reliable for custom elements)
-  mv.src = nextSrc;
-
-  // Optional: log for quick debugging
-  console.debug('[Cart toggle] Set src ->', nextSrc);
 });
