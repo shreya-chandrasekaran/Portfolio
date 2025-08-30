@@ -106,19 +106,33 @@
         <!-- Shopping Cart — Toggle between Open and Folded -->
         <article class="card">
           <model-viewer
-            class="sc-model"
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb"
-            data-open-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb"
-            data-folded-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartFold.glb"
-            camera-controls shadow-intensity="1" reveal="auto">
+            camera-controls
+            shadow-intensity="1"
+            reveal="auto"
+            crossorigin="anonymous">
           </model-viewer>
 
           <div class="card-body">
             <h4>Shopping Cart — CAD Concepts</h4>
 
             <div class="links sc-toggle" role="tablist" aria-label="Cart view">
-              <button class="btn small active" type="button" role="tab" aria-selected="true" data-sc-variant="open">Open</button>
-              <button class="btn small" type="button" role="tab" aria-selected="false" data-sc-variant="folded">Folded</button>
+              <button
+                class="btn small active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb">
+                Open
+              </button>
+              <button
+                class="btn small"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartFolded.glb">
+                Folded
+              </button>
             </div>
 
             <ul class="bullets">
