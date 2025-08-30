@@ -89,10 +89,13 @@
           </model-viewer>
           <div class="card-body">
             <h4>Camera Holster</h4>
+            <div class="links">
+              <button class="btn small" data-dialog="waist-holster-modal">Watch video</button>
+            </div>
             <ul>
-              <li>CAD‑only concept exploring compact latch geometry.</li>
+              <li>CAD-only concept exploring compact latch geometry.</li>
               <li>Optimized belt interface and fast alignment.</li>
-              <li>Trade‑offs noted for assembly and service.</li>
+              <li>Trade-offs noted for assembly and service.</li>
             </ul>
             <div class="tags">
               <span>Fusion 360</span><span>Mechanisms</span>
@@ -112,8 +115,8 @@
             
             <!-- Toggle buttons -->
             <div class="links sc-toggle">
-              <button class="btn small active" data-sc-variant="open">Open</button>
-              <button class="btn small" data-sc-variant="folded">Folded</button>
+              <button class="btn small active" data-sc-variant="open"> Open </button>
+              <button class="btn small" data-sc-variant="folded"> Folded </button>
             </div>
             
             <!-- (Optional) bullets that stay the same for both, or make 2 sets and swap in JS -->
@@ -126,6 +129,22 @@
           </div>
         </article>
 
+        <!-- Alternative Cart Design -->
+        <article class="card">
+          <model-viewer
+            src="https://shreya-chandrasekaran.github.io/Portfolio/models/altCart.glb"
+            camera-controls shadow-intensity="1" reveal="auto">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Shopping Cart — Alternative Design</h4>
+            <ul>
+              <li>Alternate frame geometry for stiffness vs. weight trade-off.</li>
+              <li>Revised caster layout for tighter turning radius.</li>
+              <li>Explored nesting clearances and manufacturing steps.</li>
+            </ul>
+            <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
+          </div>
+        </article>
             
         <!-- Art Centre + Gallery -->
         <article class="card">
@@ -162,6 +181,23 @@
             <div class="tags">
               <span>Electronics</span><span>Prototyping</span>
             </div>
+          </div>
+        </article>
+
+        <!-- Guitar Body -->
+        <article class="card">
+          <model-viewer
+            src="https://shreya-chandrasekaran.github.io/Portfolio/models/guitar.glb"
+            camera-controls shadow-intensity="1" reveal="auto">
+          </model-viewer>
+          <div class="card-body">
+            <h4>Electric Guitar Body — CAD Study</h4>
+            <ul>
+              <li>Parametric body contouring and bevels for ergonomics.</li>
+              <li>Cavity routing for pickups, control pocket, and wiring.</li>
+              <li>Fixture and tool-path considerations for CNC routing.</li>
+            </ul>
+            <div class="tags"><span>Fusion 360</span><span>Surfacing</span></div>
           </div>
         </article>
 
@@ -256,6 +292,27 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Waist Holster video modal -->
+  <dialog id="waist-holster-modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h4>Camera Holster — Motion Study</h4>
+      <div class="modal-content">
+        <div class="video-wrap">
+          <video controls preload="metadata">
+            <source src="media/WaistHolsterMotion.mp4" type="video/mp4">
+            <!-- Optional fallback:
+            <source src="media/waist_holster_motion.webm" type="video/webm">
+            -->
+            Your browser does not support the video tag.
+          </video>
+          <p class="muted small">Motion study exported from Fusion 360. Keep MP4 under ~100&nbsp;MB for GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
 
   <script src="main.js"></script>
 </body>
