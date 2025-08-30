@@ -35,12 +35,10 @@ document.querySelectorAll('.gallery-grid img').forEach(img => {
 // ---- Shopping Cart toggle (Open / Folded) ----
 const cartVariants = {
   open: {
-    src: 'models/shopping_cart_open.glb',
-    poster: 'img/shopping_cart_open_poster.jpg',
+    src: 'models/cartOpen.glb',
   },
   folded: {
-    src: 'models/shopping_cart_folded.glb',
-    poster: 'img/shopping_cart_folded_poster.jpg',
+    src: 'models/cartFold.glb',
   },
 };
 
