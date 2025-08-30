@@ -98,3 +98,28 @@
     // }
   });
 })();
+
+// --- Simple toggle for any ".sc-toggle" group ---
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.sc-toggle [data-src]');
+  if (!btn) return;
+
+  const card = btn.closest('.card');
+  const mv = card?.querySelector('model-viewer');
+  const nextSrc = btn.dataset.src;
+
+  if (!mv || !nextSrc) return;
+
+  // Update active state + a11y
+  const group = btn.closest('.sc-toggle');
+  group.querySelectorAll('[data-src]').forEach(b => {
+    b.classList.toggle('active', b === btn);
+    b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+  });
+
+  // Swap the model (property assign is most reliable for custom elements)
+  mv.src = nextSrc;
+
+  // Optional: log for quick debugging
+  console.debug('[Cart toggle] Set src ->', nextSrc);
+});
