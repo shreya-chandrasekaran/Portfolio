@@ -106,25 +106,26 @@
         <!-- Shopping Cart — Toggle between Open and Folded -->
         <article class="card">
           <model-viewer
+            class="sc-model"
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb"
+            data-open-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb"
+            data-folded-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartFolded.glb"
             camera-controls shadow-intensity="1" reveal="auto">
           </model-viewer>
-          
+
           <div class="card-body">
             <h4>Shopping Cart — CAD Concepts</h4>
-            
-            <!-- Toggle buttons -->
-            <div class="links sc-toggle">
-              <button class="btn small active" data-sc-variant="open"> Open </button>
-              <button class="btn small" data-sc-variant="folded"> Folded </button>
+
+            <div class="links sc-toggle" role="tablist" aria-label="Cart view">
+              <button class="btn small active" type="button" role="tab" aria-selected="true" data-sc-variant="open">Open</button>
+              <button class="btn small" type="button" role="tab" aria-selected="false" data-sc-variant="folded">Folded</button>
             </div>
-            
-            <!-- (Optional) bullets that stay the same for both, or make 2 sets and swap in JS -->
+
             <ul class="bullets">
               <li>Ergonomics & nesting considered; caster spacing tuned.</li>
               <li>Material + assembly trade-offs documented.</li>
             </ul>
-            
+
             <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
           </div>
         </article>
