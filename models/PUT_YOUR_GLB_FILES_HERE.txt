@@ -1,1 +1,0 @@
-Place your .glb models here and keep the filenames used in index.html, or edit the HTML to match.
