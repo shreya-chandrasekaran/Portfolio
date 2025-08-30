@@ -68,7 +68,8 @@
           <div class="card-body">
             <h4>Camera Clip — Working Prototype</h4>
             <div class="links">
-              <button class="btn small" data-dialog="camera-clip-modal">View details (video + photos)</button>
+              <button class="btn small" data-dialog="camera-clip-modal">Watch video</button>
+              <button class="btn small btn-secondary" data-dialog="camera-clip-photos-modal">View photos</button>
             </div>
             <ul>
               <li>Quick‑access; single‑hand attach/detach &lt; 2 s.</li>
@@ -170,6 +171,9 @@
           </model-viewer>
           <div class="card-body">
             <h4>Art Centre + Gallery</h4>
+            <div class="links">
+              <button class="btn small" data-dialog="art-centre-photos-modal">View photos</button>
+            </div>
             <ul>
               <li>SketchUp model; physical scale model with lighting & landscape.</li>
               <li>Gallery circulation, daylight, and façade rhythm studied.</li>
@@ -267,7 +271,7 @@
 
   <!-- ===== Modals (Details / Videos / Photos) ===== -->
 
-  <!-- Camera Clip modal -->
+  <!-- Camera Clip video modal -->
   <dialog id="camera-clip-modal" class="modal">
     <div class="modal-inner">
       <button class="modal-close" aria-label="Close">&times;</button>
@@ -322,6 +326,40 @@
             Your browser does not support the video tag.
           </video>
           <p class="muted small">Motion study exported from Fusion 360.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Camera Clip — Photos modal -->
+  <dialog id="camera-clip-photos-modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h4>Camera Clip — Photos</h4>
+      <div class="modal-content">
+        <div class="gallery-grid">
+          <!-- Use your existing filenames; add/remove as needed -->
+          <img src="img/camera_clip_photo1.jpg" alt="Camera Clip prototype, front view" loading="lazy" />
+          <img src="img/camera_clip_photo2.jpg" alt="Hinge detail" loading="lazy" />
+          <img src="img/camera_clip_photo3.jpg" alt="Latch detail" loading="lazy" />
+          <!-- <img src="img/camera_clip_photo4.jpg" alt="Mounted on belt" loading="lazy" /> -->
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Art Centre + Gallery — Photos modal -->
+  <dialog id="art-centre-photos-modal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h4>Art Centre + Gallery — Photos</h4>
+      <div class="modal-content">
+        <div class="gallery-grid">
+          <!-- Replace filenames with your actual ones -->
+          <img src="img/art_centre_1.jpg" alt="Scale model: overall view" loading="lazy" />
+          <img src="img/art_centre_2.jpg" alt="Façade and landscape detail" loading="lazy" />
+          <img src="img/art_centre_3.jpg" alt="Gallery interior circulation" loading="lazy" />
+          <!-- <img src="img/art_centre_4.jpg" alt="Lighting study" loading="lazy" /> -->
         </div>
       </div>
     </div>
