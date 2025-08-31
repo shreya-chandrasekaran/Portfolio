@@ -92,7 +92,7 @@ nav a:hover{ color:var(--text); }
 #passions .passions-wrap{ max-width:1100px; margin:0 auto; padding:0 16px; }
 #passions .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.35px; color:#9fb2c8; border:1px solid #1e2a3a; border-radius:999px; padding:4px 10px; }
 #passions .passions-title{ font-size:28px; line-height:1.15; margin:10px 0 6px; }
-#passions .passions-lead{ color:#9fb2c8; max-width:68ch; margin:10px 0 20px; line-height:1.6; font-size:15px; }
+#passions .passions-lead{ color:#9fb2c8; max-width:100%; margin:10px 0 20px; line-height:1.6; font-size:15px; }
 
 /* Tabs */
 #passions .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
