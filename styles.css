@@ -133,7 +133,13 @@ nav a:hover { color: var(--text); }
   background: radial-gradient(100% 150% at 50% 0%, #0f141c, #0a0f16);
   overflow: hidden; margin-bottom: 10px;
 }
-#passions .stage { aspect-ratio: 16/10; display: grid; place-items: center; padding: 10px; }
+#passions .stage {
+  aspect-ratio: 4/3;   /* less wide & tall than 16/10 */
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
 /* Mini framed artwork */
 #passions figure { margin: 0 auto; max-width: 55%; text-align: center; }
 #passions img{
