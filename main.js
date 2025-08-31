@@ -1,12 +1,12 @@
-// main.js — site behavior (year, modals, shopping cart toggle)
+// main.js — site behavior (year, modals, shopping cart toggle, passions)
 
-// 1) Footer year
+/* 1) Footer year */
 (() => {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// 2) Modals (open via [data-dialog], close via .modal-close / backdrop / Esc)
+/* 2) Modals (open via [data-dialog], close via .modal-close / backdrop / Esc) */
 (() => {
   // Open
   document.addEventListener('click', (e) => {
@@ -48,7 +48,7 @@
   });
 })();
 
-// 3) Shopping cart toggle (single, robust, per-button data-src)
+/* 3) model-viewer debug + Shopping cart toggle (Open/Folded) */
 document.addEventListener('DOMContentLoaded', () => {
   // Optional: log model-viewer load/errors for quick debug
   document.querySelectorAll('model-viewer').forEach(mv => {
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mv.addEventListener('error', (ev) => console.error('[model-viewer] error for', mv.src, ev));
   });
 
+  // Toggle cart glb via buttons with data-src
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.sc-toggle [data-src]');
     if (!btn) return;
@@ -74,14 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
       b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
     });
 
-    // Swap the model; property assignment is most reliable
+    // Swap the model
     console.debug('[Cart toggle] Setting src ->', nextSrc);
     mv.src = nextSrc;
-
-    // Force reveal behavior again (optional)
     mv.setAttribute('reveal', 'auto');
   });
 });
+
+/* 4) Passions: toggle + carousel + spotify (scoped & safe) */
+(() => {
+  // Elements (guard if section not present)
+  const stage = document.getElementById('stage');
+  const dots = document.getElementById('dots');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const tabDigital = document.getElementById('tab-digital');
+  const tabHand = document.getElementById('tab-hand');
+  const playToggle = document.getElementById('playToggle');
+  const spotify = document.getElementById('spotify');
+
+  if (!stage || !tabDigital || !tabHand || !prev || !next || !dots) return;
 
   // Replace with YOUR images + captions
   const DIGITAL = [
@@ -95,18 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {src:"https://picsum.photos/seed/h3/1200/800", alt:"Handmade artwork 3", title:"Graphite", caption:"Value & edge practice."}
   ];
 
-  const stage = document.getElementById('stage');
-  const dots = document.getElementById('dots');
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
-  const tabDigital = document.getElementById('tab-digital');
-  const tabHand = document.getElementById('tab-hand');
-  const playToggle = document.getElementById('playToggle');
-  const spotify = document.getElementById('spotify');
-
   let current = 'digital';
   let i = 0;
-
   const data = () => (current === 'digital' ? DIGITAL : HAND);
 
   function renderSlide() {
@@ -117,8 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <figcaption><strong>${item.title}</strong> — ${item.caption}</figcaption>
       </figure>`;
     renderDots();
-    // pre-load neighbors
-    [i-1, i+1].forEach(k=>{
+
+    // Preload neighbors for snappy arrows
+    [i-1, i+1].forEach(k => {
       const j = (k + data().length) % data().length;
       const img = new Image(); img.src = data()[j].src;
     });
@@ -139,27 +143,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function setSet(which) {
     current = which;
     i = 0;
-    tabDigital.classList.toggle('is-active', which==='digital');
-    tabDigital.setAttribute('aria-selected', which==='digital');
-    tabHand.classList.toggle('is-active', which==='hand');
-    tabHand.setAttribute('aria-selected', which==='hand');
+    tabDigital.classList.toggle('is-active', which === 'digital');
+    tabDigital.setAttribute('aria-selected', which === 'digital');
+    tabHand.classList.toggle('is-active', which === 'hand');
+    tabHand.setAttribute('aria-selected', which === 'hand');
     renderSlide();
   }
 
   prev.addEventListener('click', () => { i = (i - 1 + data().length) % data().length; renderSlide(); });
   next.addEventListener('click', () => { i = (i + 1) % data().length; renderSlide(); });
+
+  // Keyboard navigation for accessibility
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') prev.click();
     if (e.key === 'ArrowRight') next.click();
   });
 
+  // Tabs
   tabDigital.addEventListener('click', () => setSet('digital'));
   tabHand.addEventListener('click', () => setSet('hand'));
 
-  playToggle.addEventListener('click', () => {
+  // Spotify toggle (optional)
+  playToggle?.addEventListener('click', () => {
     const open = spotify.classList.toggle('is-open');
     playToggle.setAttribute('aria-expanded', String(open));
   });
 
-  // init
+  // Init
   setSet('digital');
+})();
