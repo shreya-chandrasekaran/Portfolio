@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const open = spotify.classList.toggle('is-open');
     playToggle.setAttribute('aria-expanded', String(open));
   });
+  
 
   // Init
   setSet('digital');
