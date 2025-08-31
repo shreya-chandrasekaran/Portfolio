@@ -125,6 +125,21 @@ nav a:hover{ color:var(--text); }
 #passions .spotify-embed{ display:none; border:1px solid #1e2a3a; border-radius:12px; overflow:hidden; margin-top:8px; }
 #passions .spotify-embed.is-open{ display:block; }
 #passions .gallery-title{ font-size:20px; font-weight:600; color:#e9eef6; margin:16px 0 12px; text-align:center; letter-spacing:.3px; }
+/* Tabs + Play button alignment */
+.passions-controls {
+  display: flex;
+  justify-content: space-between; /* tabs left, play right */
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+@media (max-width:720px){
+  .passions-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 
 /* =========================
    Responsive tweaks
