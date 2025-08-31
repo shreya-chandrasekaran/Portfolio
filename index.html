@@ -212,203 +212,59 @@
     </div>
   </section>
 
-  <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Projects & Passions — Toggle + Carousel</title>
-<style>
-  :root{
-    /* neutral, portfolio‑friendly palette */
-    --bg:#0b0f15; --card:#0f141c; --ink:#1b2432; --line:#1f2a3a; --text:#e9eef6; --muted:#a7b7cc; --accent:#77e4c8;
-    --r:16px; --shadow:0 8px 28px rgba(0,0,0,.28);
-  }
-  html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  a{color:var(--accent);text-decoration:none}
-  .wrap{max-width:1080px;margin:40px auto;padding:0 20px}
-  .eyebrow{display:inline-block;font-size:11px;letter-spacing:.35px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
-  .h1{font-size:36px;line-height:1.1;margin:10px 0}
-  .lead{color:var(--muted);max-width:70ch;margin:6px 0 18px}
+<!-- =========================
+     PASSIONS — Projects & Passions (clean)
+     Drop this right below your Projects section
+========================== -->
+<section id="passions" aria-labelledby="passions-heading">
+  <div class="passions-wrap">
+    <span class="eyebrow">Side Quests</span>
+    <h2 id="passions-heading" class="passions-title">Passions</h2>
+    <p class="passions-lead">
+      Curated art + a little music. Toggle the medium and flip through one piece at a time.
+    </p>
 
-  .card{background:linear-gradient(180deg,var(--card),#0d131b);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-  .pad{padding:20px}
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Art categories">
+      <button role="tab" id="tab-digital" class="tab is-active" aria-selected="true" aria-controls="panel-digital">Digital</button>
+      <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
+    </div>
 
-  /* Tabs */
-  .tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-  .tab{appearance:none;border:1px solid var(--line);background:#0d1219;color:var(--text);padding:8px 14px;border-radius:999px;cursor:pointer}
-  .tab[aria-selected="true"], .tab.active{border-color:#2b3c54;background:linear-gradient(180deg,#0f1a26,#0d151f)}
-  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-  /* Carousel */
-  .carousel{position:relative;border:1px solid var(--line);border-radius:18px;background:radial-gradient(80% 140% at 50% 0%, #0e141d, #0a0f16);overflow:hidden}
-  .stage{aspect-ratio: 16/10; display:grid;place-items:center}
-  .slide{width:100%;height:100%;display:grid;place-items:center}
-  .slide figure{margin:0;padding:0;max-width:min(90%,900px)}
-  .slide img{width:100%;height:auto;border-radius:14px;border:1px solid #1f2b3e;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  .caption{margin:10px auto 14px;max-width:70ch;color:var(--muted);font-size:14px;text-align:center}
-
-  .nav{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
-  .nav button{pointer-events:auto;appearance:none;border:1px solid var(--line);background:#0b1119;color:var(--text);border-radius:12px;padding:10px;display:grid;place-items:center;margin:0 10px;opacity:.9}
-  .nav button:hover{opacity:1}
-  .nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-  .dots{display:flex;gap:6px;justify-content:center;padding:10px}
-  .dot{width:8px;height:8px;border-radius:999px;background:#293548;border:1px solid #304159}
-  .dot[aria-current="true"]{background:var(--accent);border-color:#2a433f}
-
-  /* Music row */
-  .music{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;margin-top:14px}
-  .micro{color:var(--muted);font-size:14px}
-  .play-btn{appearance:none;border:1px solid var(--line);background:#0d1219;color:var(--text);padding:8px 12px;border-radius:10px;display:inline-flex;gap:8px;align-items:center;cursor:pointer}
-  .play-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .spotify-embed{display:none;margin-top:10px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
-  .spotify-embed.active{display:block}
-
-  /* Accessibility helpers */
-  .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <section class="card pad" aria-labelledby="passions-heading">
-      <span class="eyebrow">Unplugged</span>
-      <h2 id="passions-heading" class="h1">Passions — Art Gallery</h2>
-      <p class="lead">A tiny, curated exhibit. Toggle between <strong>Digital</strong> and <strong>Handwork</strong>, then flip through one piece at a time. Minimal on the page, generous on the craft.</p>
-
-      <!-- Tabs -->
-      <div role="tablist" aria-label="Art categories" class="tabs" id="tabs">
-        <button role="tab" id="tab-digital" class="tab" aria-selected="true" aria-controls="panel-digital">Digital</button>
-        <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
-      </div>
-
-      <!-- Carousel (shared for both tabs) -->
-      <div class="carousel" id="carousel">
-        <div class="stage" id="stage" aria-live="polite">
-          <!-- slide injected here -->
-        </div>
-        <div class="nav" aria-hidden="false">
-          <button id="prev" aria-label="Previous artwork" title="Previous">
-            <!-- left chevron -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button id="next" aria-label="Next artwork" title="Next">
-            <!-- right chevron -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 19l7-7-7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-        <div class="dots" id="dots" aria-label="Slide position"></div>
-      </div>
-
-      <!-- Music: instruments + playlist trigger -->
-      <div class="music">
-        <div class="micro" aria-label="Instruments list">
-          <strong>Side quests:</strong> electric & acoustic guitar, mandolin, veena, panduri.
-        </div>
-        <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false">
-          <!-- play icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7-11-7z"/></svg>
-          <span>Play my coding playlist</span>
+    <!-- Carousel -->
+    <div class="carousel">
+      <div class="stage" id="stage" aria-live="polite"></div>
+      <div class="nav">
+        <button id="prev" aria-label="Previous artwork" title="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="next" aria-label="Next artwork" title="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19l7-7-7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
-      <div class="spotify-embed" id="spotify">
-        <!-- Replace this src with YOUR playlist link -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n?utm_source=generator" width="100%" height="200" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify playlist"></iframe>
+      <div class="dots" id="dots" aria-label="Slide position"></div>
+    </div>
+
+    <!-- Music -->
+    <div class="music">
+      <div class="micro"><strong>Instruments:</strong> electric & acoustic guitar · mandolin · veena · panduri</div>
+      <div class="play">
+        <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false" title="Play playlist">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
+          Play my coding playlist
+        </button>
+        <!-- Alt: open playlist in a new tab instead of embed -->
+        <a id="openPlaylist" class="open-link" href="https://open.spotify.com/playlist/37i9dQZF1DX4dyzvuaRJ0n" target="_blank" rel="noreferrer">open ↗</a>
       </div>
-    </section>
+      <div class="spotify-embed" id="spotify">
+        <!-- REPLACE with your playlist -->
+        <iframe title="Spotify playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n?utm_source=generator"
+                width="100%" height="160" frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
   </div>
-
-<script>
-  // ------- Replace with your own images & captions -------
-  const DIGITAL = [
-    {src:"https://picsum.photos/seed/dig1/1200/800", alt:"Digital artwork 1", title:"Color Study", caption:"Digital – blocking light & shadow."},
-    {src:"https://picsum.photos/seed/dig2/1200/800", alt:"Digital artwork 2", title:"Form", caption:"Geometry meets texture."},
-    {src:"https://picsum.photos/seed/dig3/1200/800", alt:"Digital artwork 3", title:"Night Sketch", caption:"Low‑light composition."}
-  ];
-  const HAND = [
-    {src:"https://picsum.photos/seed/hand1/1200/800", alt:"Handmade artwork 1", title:"Ink & Wash", caption:"Handwork – ink + water."},
-    {src:"https://picsum.photos/seed/hand2/1200/800", alt:"Handmade artwork 2", title:"Acrylics", caption:"Palette knife study."},
-    {src:"https://picsum.photos/seed/hand3/1200/800", alt:"Handmade artwork 3", title:"Graphite", caption:"Value & edge practice."}
-  ];
-
-  // State
-  let currentSet = 'digital';
-  let idx = 0;
-
-  const stage = document.getElementById('stage');
-  const dots = document.getElementById('dots');
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
-  const tabDigital = document.getElementById('tab-digital');
-  const tabHand = document.getElementById('tab-hand');
-
-  function data(){ return currentSet === 'digital' ? DIGITAL : HAND; }
-
-  function renderSlide(){
-    const item = data()[idx];
-    stage.innerHTML = `
-      <div class="slide">
-        <figure>
-          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
-          <figcaption class="caption"><strong>${item.title}</strong> — ${item.caption}</figcaption>
-        </figure>
-      </div>`;
-    renderDots();
-    // Preload next/prev for snappy arrows
-    [idx-1, idx+1].forEach(i=>{
-      const j = (i + data().length) % data().length;
-      const img = new Image(); img.src = data()[j].src;
-    });
-  }
-
-  function renderDots(){
-    const total = data().length;
-    dots.innerHTML = '';
-    for(let i=0;i<total;i++){
-      const d = document.createElement('button');
-      d.className='dot';
-      d.setAttribute('aria-label', `Go to slide ${i+1}`);
-      d.setAttribute('aria-current', i===idx ? 'true' : 'false');
-      d.addEventListener('click', ()=>{ idx=i; renderSlide(); });
-      dots.appendChild(d);
-    }
-  }
-
-  function setSet(which){
-    currentSet = which;
-    idx = 0;
-    tabDigital.setAttribute('aria-selected', which==='digital');
-    tabHand.setAttribute('aria-selected', which==='hand');
-    renderSlide();
-  }
-
-  prev.addEventListener('click', ()=>{ idx = (idx-1+data().length)%data().length; renderSlide(); });
-  next.addEventListener('click', ()=>{ idx = (idx+1)%data().length; renderSlide(); });
-
-  // keyboard nav
-  document.addEventListener('keydown', (e)=>{
-    if(e.key==='ArrowLeft'){ prev.click(); }
-    if(e.key==='ArrowRight'){ next.click(); }
-  });
-
-  // tabs
-  tabDigital.addEventListener('click', ()=> setSet('digital'));
-  tabHand.addEventListener('click', ()=> setSet('hand'));
-
-  // spotify toggle
-  const playToggle = document.getElementById('playToggle');
-  const spotify = document.getElementById('spotify');
-  playToggle.addEventListener('click', ()=>{
-    const open = spotify.classList.toggle('active');
-    playToggle.setAttribute('aria-expanded', String(open));
-  });
-
-  // init
-  setSet('digital');
-</script>
-</body>
-</html>
-
+</section>
+  
  <section id="skills" class="section">
     <div class="container">
       <h3>Skills</h3>
