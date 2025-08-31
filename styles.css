@@ -64,3 +64,25 @@ nav a:hover { color: var(--text); }
   border: 1px solid var(--accent);
   background: rgba(124,196,255,.15);
 }
+
+#passions figure {
+  margin: 0 auto;
+  max-width: 55%;      /* was ~90%, now smaller */
+  text-align: center;
+}
+
+#passions img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;  /* tighter radius for frame look */
+  border: 6px solid #f5f5f5;  /* light frame */
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  background: #fff;    /* makes it feel mounted */
+}
+
+#passions figcaption {
+  font-size: 12px;
+  color: #9fb2c8;
+  margin-top: 6px;
+}
+
