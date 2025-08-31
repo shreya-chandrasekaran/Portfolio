@@ -201,7 +201,7 @@ nav a:hover { color: var(--text); }
 }
 
 #passions .stage{
-  aspect-ratio: 4/3 !important;  /* smaller rectangle than 16/10 */
+  aspect-ratio: 1/1 !important;  /* smaller rectangle than 16/10 */
   padding: 8px;                  /* slightly tighter padding */
   display: grid;
   place-items: center;
