@@ -220,3 +220,19 @@ nav a:hover { color: var(--text); }
 #passions figure{
   max-width: 48% !important;     /* was 55% */
 }
+
+.passions-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .passions-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
