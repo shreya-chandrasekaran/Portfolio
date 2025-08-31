@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-<script>
   // Replace with YOUR images + captions
   const DIGITAL = [
     {src:"https://picsum.photos/seed/d1/1200/800", alt:"Digital artwork 1", title:"Color Study", caption:"Digital — light & shadow blocking."},
@@ -164,4 +163,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // init
   setSet('digital');
-</script>
