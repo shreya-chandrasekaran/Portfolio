@@ -187,3 +187,21 @@ nav a:hover { color: var(--text); }
   .hero-model { height: 300px; }
   #passions figure { max-width: 70%; } /* a bit larger on narrow screens */
 }
+
+/* === Passions overrides: make the grey box smaller === */
+#passions .carousel{
+  max-width: 880px;      /* shrink overall box width */
+  margin: 0 auto 10px;   /* center it */
+}
+
+#passions .stage{
+  aspect-ratio: 4/3 !important;  /* smaller rectangle than 16/10 */
+  padding: 8px;                  /* slightly tighter padding */
+  display: grid;
+  place-items: center;
+}
+
+/* (Optional) make the framed art a bit smaller too */
+#passions figure{
+  max-width: 48% !important;     /* was 55% */
+}
