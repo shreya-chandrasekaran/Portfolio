@@ -114,7 +114,13 @@ nav a:hover { color: var(--text); }
   color: #9fb2c8; border: 1px solid #1e2a3a; border-radius: 999px; padding: 4px 10px;
 }
 #passions .passions-title { font-size: 28px; line-height: 1.15; margin: 10px 0 6px; }
-#passions .passions-lead { color: #9fb2c8; max-width: 68ch; margin: 6px 0 18px; }
+#passions .passions-lead {
+  color: #9fb2c8;
+  max-width: 68ch;
+  margin: 10px 0 20px;
+  line-height: 1.6;   /* more breathing room */
+  font-size: 15px;    /* slightly larger, easier to read */
+}
 
 /* Tabs */
 #passions .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
