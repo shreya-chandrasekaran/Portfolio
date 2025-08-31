@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Replace with YOUR images + captions
   const DIGITAL = [
-    {src:"https://picsum.photos/seed/d1/1200/800", alt:"Digital artwork 1", title:"Color Study", caption:"Digital — light & shadow blocking."},
-    {src:"https://picsum.photos/seed/d2/1200/800", alt:"Digital artwork 2", title:"Form", caption:"Geometry meets texture."},
-    {src:"https://picsum.photos/seed/d3/1200/800", alt:"Digital artwork 3", title:"Night Sketch", caption:"Low-light composition."}
+    {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Showcasing cultural motifs."},
+    {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow."},
+    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative."}
   ];
   const HAND = [
     {src:"https://picsum.photos/seed/h1/1200/800", alt:"Handmade artwork 1", title:"Ink & Wash", caption:"Handwork — ink + water."},
