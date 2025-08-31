@@ -187,6 +187,15 @@ nav a:hover { color: var(--text); }
 #passions .spotify-embed { display: none; border: 1px solid #1e2a3a; border-radius: 12px; overflow: hidden; margin-top: 8px; }
 #passions .spotify-embed.is-open { display: block; }
 
+#passions .gallery-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e9eef6;
+  margin: 16px 0 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 920px){
   .hero-inner { grid-template-columns: 1fr; }
@@ -196,13 +205,13 @@ nav a:hover { color: var(--text); }
 
 /* === Passions overrides: make the grey box smaller === */
 #passions .carousel{
-  max-width: 880px;      /* shrink overall box width */
-  margin: 0 auto 10px;   /* center it */
+  max-width: 720px;      /* shrink overall box width */
+  margin: 0 auto 12px;   /* center it */
 }
 
 #passions .stage{
-  aspect-ratio: 1/1 !important;  /* smaller rectangle than 16/10 */
-  padding: 8px;                  /* slightly tighter padding */
+  aspect-ratio: 4/3 !important;  /* smaller rectangle than 16/10 */
+  padding: 6px;                  /* slightly tighter padding */
   display: grid;
   place-items: center;
 }
