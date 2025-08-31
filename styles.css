@@ -140,3 +140,41 @@ nav a:hover{color:var(--text)}
   #passions .passions-wrap{grid-template-columns:1fr;grid-template-areas:"controls" "playlist" "carousel"}
   #passions .spotify-embed iframe{height:360px}
 }
+
+/* === Center the gallery in Passions === */
+#passions .passions-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* centers content horizontally */
+  gap: 16px;
+}
+
+/* Full-width rows */
+#passions .passions-title,
+#passions .passions-lead,
+#passions .gallery-title,
+.passions-controls {
+  flex: 1 1 100%;
+}
+
+/* Gallery centered, playlist fixed on right */
+#passions .carousel {
+  flex: 0 1 720px;           /* fixed width, stays centered */
+  margin: 0 auto;            /* center itself */
+}
+
+#passions .spotify-embed {
+  flex: 0 0 320px;
+  display: none;
+}
+#passions .spotify-embed.is-open { display: block; }
+#passions .spotify-embed iframe { width: 100%; height: 460px; }
+
+/* Stack neatly on small screens */
+@media (max-width: 820px) {
+  #passions .passions-wrap { flex-direction: column; align-items: center; }
+  #passions .spotify-embed,
+  #passions .carousel { flex: 1 1 100%; max-width: 100%; }
+  #passions .spotify-embed iframe { height: 360px; }
+}
+
