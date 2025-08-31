@@ -65,24 +65,93 @@ nav a:hover { color: var(--text); }
   background: rgba(124,196,255,.15);
 }
 
-#passions figure {
-  margin: 0 auto;
-  max-width: 55%;      /* was ~90%, now smaller */
-  text-align: center;
-}
+<style>
+  /* ===== Scoped to #passions so it won’t affect the rest of your site ===== */
+  #passions { margin: 48px auto 0; }
+  #passions .passions-wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
-#passions img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;  /* tighter radius for frame look */
-  border: 6px solid #f5f5f5;  /* light frame */
-  box-shadow: 0 6px 20px rgba(0,0,0,.35);
-  background: #fff;    /* makes it feel mounted */
-}
+  #passions .eyebrow{
+    display:inline-block; font-size:12px; letter-spacing:.35px;
+    color:#9fb2c8; border:1px solid #1e2a3a; border-radius:999px; padding:4px 10px;
+  }
+  #passions .passions-title{ font-size:28px; line-height:1.15; margin:10px 0 6px; }
+  #passions .passions-lead{ color:#9fb2c8; max-width:68ch; margin:6px 0 18px; }
 
-#passions figcaption {
-  font-size: 12px;
-  color: #9fb2c8;
-  margin-top: 6px;
-}
+  /* tabs */
+  #passions .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+  #passions .tab{
+    appearance:none; cursor:pointer;
+    border:1px solid #1e2a3a; background:#0c1118; color:#e9eef6;
+    padding:8px 14px; border-radius:999px; font-size:14px;
+  }
+  #passions .tab.is-active, #passions .tab[aria-selected="true"]{
+    background:#0f1621; border-color:#26364b;
+  }
+  #passions .tab:focus-visible{ outline:2px solid #77e4c8; outline-offset:2px; }
 
+  /* carousel */
+  #passions .carousel{
+    border:1px solid #1e2a3a; border-radius:16px;
+    background:radial-gradient(100% 150% at 50% 0%, #0f141c, #0a0f16);
+    overflow:hidden; margin-bottom:10px;
+  }
+  #passions .stage{ aspect-ratio:16/10; display:grid; place-items:center; padding:10px; }
+  #passions figure{ margin:0; max-width:min(92%, 920px); }
+  #passions img{
+    display:block; width:100%; height:auto;
+    border-radius:12px; border:1px solid #1e2a3a;
+    box-shadow:0 10px 28px rgba(0,0,0,.35);
+    background:#0a0f16;
+  }
+  #passions figcaption{ text-align:center; color:#a7b7cc; font-size:13px; margin-top:8px; }
+
+  #passions .nav{ position:relative; margin-top:-54px; display:flex; justify-content:space-between; padding:0 8px; }
+  #passions .nav button{
+    appearance:none; border:1px solid #1e2a3a; background:#0b1119; color:#e9eef6;
+    border-radius:10px; padding:8px; cursor:pointer; opacity:.9;
+  }
+  #passions .nav button:hover{ opacity:1; }
+  #passions .nav button:focus-visible{ outline:2px solid #77e4c8; outline-offset:2px; }
+
+  #passions .dots{ display:flex; gap:6px; justify-content:center; padding:8px 10px 12px; }
+  #passions .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:#223043; border:1px solid #2b3d55; cursor:pointer;
+  }
+  #passions .dot[aria-current="true"]{ background:#77e4c8; border-color:#2a433f; }
+
+  /* music row */
+  #passions .music{ display:grid; grid-template-columns: 1fr auto; gap:12px; align-items:center; margin-top:10px; }
+  @media (max-width:720px){ #passions .music{ grid-template-columns:1fr; } }
+
+  #passions .micro{ color:#9fb2c8; font-size:14px; }
+  #passions .play{ display:flex; align-items:center; gap:10px; }
+  #passions .play-btn{
+    appearance:none; border:1px solid #1e2a3a; background:#0c1118; color:#e9eef6;
+    padding:8px 12px; border-radius:10px; display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+  }
+  #passions .open-link{ font-size:13px; color:#9fb2c8; }
+  #passions .spotify-embed{ display:none; border:1px solid #1e2a3a; border-radius:12px; overflow:hidden; margin-top:8px; }
+  #passions .spotify-embed.is-open{ display:block; }
+
+  #passions figure {
+    margin: 0 auto;
+    max-width: 55%;      /* was ~90%, now smaller */
+    text-align: center;
+  }
+
+  #passions img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;  /* tighter radius for frame look */
+    border: 6px solid #f5f5f5;  /* light frame */
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+    background: #fff;    /* makes it feel mounted */
+  }
+
+  #passions figcaption {
+    font-size: 12px;
+    color: #9fb2c8;
+    margin-top: 6px;
+  }
+</style>
