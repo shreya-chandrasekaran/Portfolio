@@ -218,20 +218,34 @@
   <div class="passions-wrap">
     <h2 id="passions-heading" class="passions-title">Passions</h2>
     <p class="passions-lead">
-      Free time for me usually means a paintbrush, a block of wood, or a new string instrument I probably can’t resist trying. 
-      Guitars, mandolin, veena, panduri, harmonica, kalimba — some I’ve picked up better than others, but the fun is in the learning.
+      In my free time, you’ll usually find me painting, woodworking, or attempting to master yet another string instrument. 
+      The current roster: acoustic & electric guitar, mandolin, veena, panduri, harmonica, and kalimba. Some I’ve picked up better than others, but the fun is in the learning.
     </p>
     <p class="passions-lead">
-      Here’s a small art gallery. Feel free to hit play on my playlist and browse — art goes well with music.
+      A little art, a little music. Hit play and enjoy the gallery.
     </p>
 
-    <!-- Tabs -->
-    <div class="tabs" role="tablist" aria-label="Art categories">
-      <button role="tab" id="tab-digital" class="tab is-active" aria-selected="true" aria-controls="panel-digital">Digital</button>
-      <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
+    <h3 class="gallery-title">Gallery Wall</h3>
+
+    <div class="passions-controls">
+      <div class="tabs" role="tablist" aria-label="Art categories">
+        <button role="tab" id="tab-digital" class="tab is-active" aria-selected="true" aria-controls="panel-digital">Digital</button>
+        <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
+      </div>
+
+      <div class="play">
+        <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false" title="Play playlist">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
+          Play my coding playlist
+        </button>
+      </div>
     </div>
 
-    <h3 class="gallery-title">Gallery Wall</h3>
+    <div class="spotify-embed" id="spotify">
+      <iframe title="Spotify playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n?utm_source=generator"
+              width="100%" height="160" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
     
     <!-- Carousel -->
     <div class="carousel">
@@ -246,34 +260,16 @@
       </div>
       <div class="dots" id="dots" aria-label="Slide position"></div>
     </div>
-
-    <!-- Music -->
-    <div class="music">
-      <div class="play">
-        <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false" title="Play playlist">
-          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
-          Play my coding playlist
-        </button>
-        <!-- Alt: open playlist in a new tab instead of embed -->
-        <a id="openPlaylist" class="open-link" href="https://open.spotify.com/playlist/37i9dQZF1DX4dyzvuaRJ0n" target="_blank" rel="noreferrer">open ↗</a>
-      </div>
-      <div class="spotify-embed" id="spotify">
-        <!-- REPLACE with your playlist -->
-        <iframe title="Spotify playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4dyzvuaRJ0n?utm_source=generator"
-                width="100%" height="160" frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    </div>
   </div>
 </section>
 
 <section id="contact" class="section">
   <div class="container" style="text-align:center; margin-top:40px;">
     <p style="font-size:15px; color:#a8b0bd;">
-      Let’s build something together —
-      <a href="mailto:shreya_chandrasekaran@outlook.com">email me</a>
-      or
-      <a href="Shreya_Chandrasekaran_Resume.pdf" target="_blank" rel="noopener">grab my résumé</a>.
+      Let’s make it happen — 
+      <a href="mailto:shreya_chandrasekaran@outlook.com">email</a> · 
+      <a href="https://www.linkedin.com/in/shreyachandrasekaran" target="_blank" rel="noopener">LinkedIn</a> · 
+      <a href="Shreya_Chandrasekaran_Resume.pdf" target="_blank" rel="noopener">résumé</a>
     </p>
   </div>
 </section>
