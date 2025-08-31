@@ -23,6 +23,7 @@
       <nav>
         <a href="#projects">Projects</a>
         <a href="#passions">Passions</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -44,22 +45,22 @@
       <h3>Projects</h3>
       <div class="grid">
 
-        <!-- Camera Clip — Working Prototype -->
+        <!-- Camera Clip -->
         <article class="card">
           <model-viewer
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/CameraClip.glb"
             camera-controls shadow-intensity="1" reveal="auto">
           </model-viewer>
           <div class="card-body">
-            <h4>Camera Clip — Working Prototype</h4>
+            <h4>Camera Clip</h4>
             <div class="links">
               <button class="btn small" data-dialog="camera-clip-CAD-modal">Watch motion study</button>
               <button class="btn small btn-secondary" data-dialog="camera-clip-prototype-modal">Watch prototype video</button>
             </div>
             <ul>
-              <li>Quick‑access; single‑hand attach/detach &lt; 2 s.</li>
-              <li>3D‑printed (PLA+/FDM); iterated hinge & latch for smooth action.</li>
-              <li>Bench‑tested tolerances; zero accidental detachment in tests.</li>
+              <li>Quick-access camera solution; < 2s attach/detach; replacement for obstructive strap</li>
+              <li>Modeled in Fusion 360; 3D-printed body with wire-resin hinge; iterated hinge design</li>
+              <li>Bench-tested; achieved < 1s attach/detach with zero accidental detachments</li>
             </ul>
             <div class="tags">
               <span>Fusion 360</span><span>Prototyping</span><span>DFM</span>
@@ -67,7 +68,7 @@
           </div>
         </article>
 
-        <!-- Waist Holster -->
+        <!-- Camera Holster -->
         <article class="card">
           <model-viewer
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/WaistHolster.glb"
@@ -79,9 +80,8 @@
               <button class="btn small" data-dialog="waist-holster-modal">Watch video</button>
             </div>
             <ul>
-              <li>CAD-only concept exploring compact latch geometry.</li>
-              <li>Optimized belt interface and fast alignment.</li>
-              <li>Trade-offs noted for assembly and service.</li>
+              <li>Alternate design to the Camera Clip; explored holster-style quick-access solution</li>
+              <li>Modeled in Fusion 360; created motion study; demonstrated feasibility of design</li>
             </ul>
             <div class="tags">
               <span>Fusion 360</span><span>Mechanisms</span>
@@ -89,7 +89,7 @@
           </div>
         </article>
         
-        <!-- Shopping Cart — Toggle between Open and Folded -->
+        <!-- Collapsible Cart -->
         <article class="card">
           <model-viewer
             id="cart-mv"
@@ -101,7 +101,7 @@
           </model-viewer>
 
           <div class="card-body">
-            <h4>Shopping Cart — CAD Concepts</h4>
+            <h4>Collapsible Cart</h4>
 
             <div class="links sc-toggle" role="tablist" aria-label="Cart view">
               <button
@@ -123,46 +123,44 @@
             </div>
 
             <ul class="bullets">
-              <li>Ergonomics & nesting considered; caster spacing tuned.</li>
-              <li>Material + assembly trade-offs documented.</li>
+              <li>Sustainable, affordable alternative to disposable bags; compact and user-friendly</li>
+              <li>Designed folding frame in Fusion 360; modeled open and folded states; built preliminary prototype; cart folds to save space while remaining ergonomic and practical</li>
             </ul>
 
             <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
           </div>
         </article>
 
-        <!-- Alternative Cart Design -->
+        <!-- Compact Cart -->
         <article class="card">
           <model-viewer
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/altCart.glb"
             camera-controls shadow-intensity="1" reveal="auto">
           </model-viewer>
           <div class="card-body">
-            <h4>Shopping Cart — Alternative Design</h4>
+            <h4>Compact Cart</h4>
             <ul>
-              <li>Alternate frame geometry for stiffness vs. weight trade-off.</li>
-              <li>Revised caster layout for tighter turning radius.</li>
-              <li>Explored nesting clearances and manufacturing steps.</li>
+              <li>Alternative to the Collapsible Cart; lighter, non-folding frame for ease of use</li>
+              <li>Modeled alternate frame in Fusion 360; focused on compact size, ease of use, and aesthetics</li>
             </ul>
             <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
           </div>
         </article>
             
-        <!-- Art Centre + Gallery -->
+        <!-- Art Studio + Gallery -->
         <article class="card">
           <model-viewer
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/artCentre.glb"
             camera-controls shadow-intensity="1" reveal="auto">
           </model-viewer>
           <div class="card-body">
-            <h4>Art Centre + Gallery</h4>
+            <h4>Art Studio + Gallery</h4>
             <div class="links">
               <button class="btn small" data-dialog="art-centre-photos-modal">View photos</button>
             </div>
             <ul>
-              <li>SketchUp model; physical scale model with lighting & landscape.</li>
-              <li>Gallery circulation, daylight, and façade rhythm studied.</li>
-              <li>Site planning & materials palette explored.</li>
+              <li>Design for art studio + gallery with clear circulation, natural light, and cultural context</li>
+              <li>Built SketchUp model; tested ideas with study models; created scale model with lighting and landscaping; presented design showing circulation, daylight, and site layout</li>
             </ul>
             <div class="tags">
               <span>SketchUp</span><span>Scale Model</span>
@@ -170,7 +168,7 @@
           </div>
         </article>
 
-        <!-- Mini Electric Piano (Video) -->
+        <!-- Mini Electric Piano (Breadboard) -->
         <article class="card">
           <img class="media-img" src="img/keyboard.jpg" alt="Mini electric piano on breadboard" />
           <div class="card-body">
@@ -179,9 +177,8 @@
               <button class="btn small" data-dialog="piano-modal">Watch video</button>
             </div>
             <ul>
-              <li>Passive buzzer, resistors, push buttons; breadboard build.</li>
-              <li>Basic circuit design and systematic debugging.</li>
-              <li>Wiring map and parts list documented.</li>
+              <li>Built a small electronic piano to practice basic circuit design</li>
+              <li>Simulated in Tinkercad; wired buzzer, resistors, and push buttons on breadboard; produced a functional mini piano with wiring diagram and parts list</li>
             </ul>
             <div class="tags">
               <span>Electronics</span><span>Prototyping</span>
@@ -189,18 +186,17 @@
           </div>
         </article>
 
-        <!-- Guitar Body -->
+        <!-- Acoustic Guitar Body -->
         <article class="card">
           <model-viewer
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/guitar.glb"
             camera-controls shadow-intensity="1" reveal="auto">
           </model-viewer>
           <div class="card-body">
-            <h4>Electric Guitar Body — CAD Study</h4>
+            <h4>Acoustic Guitar Body</h4>
             <ul>
-              <li>Parametric body contouring and bevels for ergonomics.</li>
-              <li>Cavity routing for pickups, control pocket, and wiring.</li>
-              <li>Fixture and tool-path considerations for CNC routing.</li>
+              <li>Designed 3D-printable guitar body as a base study for an electric guitar design</li>
+              <li>Used Fusion 360 surfacing; shaped contours and bevels for comfort and playability; produced CAD model ready for 3D printing and string integration</li>
             </ul>
             <div class="tags"><span>Fusion 360</span><span>Surfacing</span></div>
           </div>
@@ -273,7 +269,6 @@
     </p>
   </div>
 </section>
-
 
   <footer class="site-footer">
     <div class="container">
