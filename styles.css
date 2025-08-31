@@ -92,7 +92,7 @@ nav a:hover{ color:var(--text); }
 #passions .passions-wrap{ max-width:1100px; margin:0 auto; padding:0 16px; }
 #passions .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.35px; color:#9fb2c8; border:1px solid #1e2a3a; border-radius:999px; padding:4px 10px; }
 #passions .passions-title{ font-size:28px; line-height:1.15; margin:10px 0 6px; }
-#passions .passions-lead{ color:#9fb2c8; max-width:100%; margin:10px 0 20px; line-height:1.6; font-size:15px; }
+#passions .passions-lead{ color:#9fb2c8; max-width:78ch; margin:10px 0 20px; line-height:1.6; font-size:15px; }
 
 /* Tabs */
 #passions .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
@@ -123,26 +123,6 @@ nav a:hover{ color:var(--text); }
 #passions .play-btn{ appearance:none; border:1px solid #1e2a3a; background:#0c1118; color:#e9eef6; padding:8px 12px; border-radius:10px; display:inline-flex; align-items:center; gap:8px; cursor:pointer; }
 #passions .open-link{ font-size:13px; color:#9fb2c8; }
 #passions .spotify-embed{ display:none; border:1px solid #1e2a3a; border-radius:12px; overflow:hidden; margin-top:8px; }
-
-/* The new stuff */
-/* --- Stack playlist under the Play button and shrink it --- */
-#passions .play{
-  display:flex;
-  flex-direction:column;        /* button on top, embed below */
-  align-items:flex-start;       /* left align */
-  gap:8px;
-}
-
-#passions .spotify-embed{
-  display:none;                 /* already default */
-  width:100%;
-  max-width:320px;              /* make it smaller */
-  margin-top:6px;               /* slight spacing from button */
-  border:1px solid #1e2a3a;
-  border-radius:12px;
-  overflow:hidden;
-}
-
 #passions .spotify-embed.is-open{ display:block; }
 
 #passions .spotify-embed iframe{
