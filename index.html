@@ -88,46 +88,52 @@
             </div>
           </div>
         </article>
+
+        <article class="card">
+          <model-viewer
+            src="https://shreya-chandrasekaran.github.io/Portfolio/models/WaistHolster.glb"
+            camera-controls shadow-intensity="1" reveal="auto">
+          </model-viewer>
+
+          <div class="card-body compact">
+            <h4>Camera Holster
+              <button class="link-inline" data-dialog="waist-holster-modal">▶ Watch video</button>
+            </h4>
+
+            <ul class="bullets compact">
+              <li>Explores compact latch geometry.</li>
+              <li>Fast belt alignment.</li>
+              <li>Notes on assembly/service trade-offs.</li>
+            </ul>
+
+            <div class="meta">Fusion 360 · Mechanisms</div>
+          </div>
+        </article>
         
         <!-- Shopping Cart — Toggle between Open and Folded -->
         <article class="card">
           <model-viewer
             id="cart-mv"
             src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb"
-            camera-controls
-            shadow-intensity="1"
-            reveal="auto"
-            crossorigin="anonymous">
+            camera-controls shadow-intensity="1" reveal="auto" crossorigin="anonymous">
           </model-viewer>
 
-          <div class="card-body">
-            <h4>Shopping Cart — CAD Concepts</h4>
+          <div class="card-body compact">
+            <h4>
+              Shopping Cart — CAD Concepts
+              <span class="toggle-inline">
+                <button class="link-inline active" data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb">Open</button>
+                ·
+                <button class="link-inline" data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartFolded.glb">Folded</button>
+              </span>
+            </h4>
 
-            <div class="links sc-toggle" role="tablist" aria-label="Cart view">
-              <button
-                class="btn small active"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartOpen.glb">
-                Open
-              </button>
-              <button
-                class="btn small"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                data-src="https://shreya-chandrasekaran.github.io/Portfolio/models/cartFolded.glb">
-                Folded
-              </button>
-            </div>
-
-            <ul class="bullets">
-              <li>Ergonomics & nesting considered; caster spacing tuned.</li>
-              <li>Material + assembly trade-offs documented.</li>
+            <ul class="bullets compact">
+              <li>Ergonomics & caster spacing tuned.</li>
+              <li>Material and assembly trade-offs noted.</li>
             </ul>
 
-            <div class="tags"><span>Onshape/Fusion</span><span>CAD</span></div>
+            <div class="meta">Onshape/Fusion · CAD</div>
           </div>
         </article>
 
