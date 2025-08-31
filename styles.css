@@ -123,6 +123,35 @@ nav a:hover{ color:var(--text); }
 #passions .play-btn{ appearance:none; border:1px solid #1e2a3a; background:#0c1118; color:#e9eef6; padding:8px 12px; border-radius:10px; display:inline-flex; align-items:center; gap:8px; cursor:pointer; }
 #passions .open-link{ font-size:13px; color:#9fb2c8; }
 #passions .spotify-embed{ display:none; border:1px solid #1e2a3a; border-radius:12px; overflow:hidden; margin-top:8px; }
+
+/* The new stuff */
+/* --- Stack playlist under the Play button and shrink it --- */
+#passions .play{
+  display:flex;
+  flex-direction:column;        /* button on top, embed below */
+  align-items:flex-start;       /* left align */
+  gap:8px;
+}
+
+#passions .spotify-embed{
+  display:none;                 /* already default */
+  width:100%;
+  max-width:320px;              /* make it smaller */
+  margin-top:6px;               /* slight spacing from button */
+  border:1px solid #1e2a3a;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+#passions .spotify-embed.is-open{ display:block; }
+
+#passions .spotify-embed iframe{
+  width:100%;
+  height:120px;                 /* compact player height */
+  border:0;
+}
+
+
 #passions .spotify-embed.is-open{ display:block; }
 #passions .gallery-title{ font-size:20px; font-weight:600; color:#e9eef6; margin:16px 0 12px; text-align:center; letter-spacing:.3px; }
 /* Tabs + Play button alignment */
