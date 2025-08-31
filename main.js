@@ -82,3 +82,86 @@ document.addEventListener('DOMContentLoaded', () => {
     mv.setAttribute('reveal', 'auto');
   });
 });
+
+<script>
+  // Replace with YOUR images + captions
+  const DIGITAL = [
+    {src:"https://picsum.photos/seed/d1/1200/800", alt:"Digital artwork 1", title:"Color Study", caption:"Digital — light & shadow blocking."},
+    {src:"https://picsum.photos/seed/d2/1200/800", alt:"Digital artwork 2", title:"Form", caption:"Geometry meets texture."},
+    {src:"https://picsum.photos/seed/d3/1200/800", alt:"Digital artwork 3", title:"Night Sketch", caption:"Low-light composition."}
+  ];
+  const HAND = [
+    {src:"https://picsum.photos/seed/h1/1200/800", alt:"Handmade artwork 1", title:"Ink & Wash", caption:"Handwork — ink + water."},
+    {src:"https://picsum.photos/seed/h2/1200/800", alt:"Handmade artwork 2", title:"Acrylics", caption:"Palette knife study."},
+    {src:"https://picsum.photos/seed/h3/1200/800", alt:"Handmade artwork 3", title:"Graphite", caption:"Value & edge practice."}
+  ];
+
+  const stage = document.getElementById('stage');
+  const dots = document.getElementById('dots');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const tabDigital = document.getElementById('tab-digital');
+  const tabHand = document.getElementById('tab-hand');
+  const playToggle = document.getElementById('playToggle');
+  const spotify = document.getElementById('spotify');
+
+  let current = 'digital';
+  let i = 0;
+
+  const data = () => (current === 'digital' ? DIGITAL : HAND);
+
+  function renderSlide() {
+    const item = data()[i];
+    stage.innerHTML = `
+      <figure>
+        <img src="${item.src}" alt="${item.alt}" loading="lazy" />
+        <figcaption><strong>${item.title}</strong> — ${item.caption}</figcaption>
+      </figure>`;
+    renderDots();
+    // pre-load neighbors
+    [i-1, i+1].forEach(k=>{
+      const j = (k + data().length) % data().length;
+      const img = new Image(); img.src = data()[j].src;
+    });
+  }
+
+  function renderDots() {
+    dots.innerHTML = '';
+    data().forEach((_, idx) => {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-current', idx === i ? 'true' : 'false');
+      d.setAttribute('aria-label', `Go to slide ${idx+1}`);
+      d.addEventListener('click', () => { i = idx; renderSlide(); });
+      dots.appendChild(d);
+    });
+  }
+
+  function setSet(which) {
+    current = which;
+    i = 0;
+    tabDigital.classList.toggle('is-active', which==='digital');
+    tabDigital.setAttribute('aria-selected', which==='digital');
+    tabHand.classList.toggle('is-active', which==='hand');
+    tabHand.setAttribute('aria-selected', which==='hand');
+    renderSlide();
+  }
+
+  prev.addEventListener('click', () => { i = (i - 1 + data().length) % data().length; renderSlide(); });
+  next.addEventListener('click', () => { i = (i + 1) % data().length; renderSlide(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') prev.click();
+    if (e.key === 'ArrowRight') next.click();
+  });
+
+  tabDigital.addEventListener('click', () => setSet('digital'));
+  tabHand.addEventListener('click', () => setSet('hand'));
+
+  playToggle.addEventListener('click', () => {
+    const open = spotify.classList.toggle('is-open');
+    playToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  // init
+  setSet('digital');
+</script>
