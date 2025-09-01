@@ -92,7 +92,7 @@ nav a:hover{ color:var(--text); }
 #passions .passions-wrap{max-width:1100px;margin:0 auto;padding:0 16px;}
 #passions .eyebrow{display:inline-block;font-size:12px;letter-spacing:.35px;color:#9fb2c8;border:1px solid #1e2a3a;border-radius:999px;padding:4px 10px;}
 #passions .passions-title{font-size:28px;line-height:1.15;margin:10px 0 6px;}
-#passions .passions-lead{color:#9fb2c8;max-width:68ch;margin:10px 0 20px;line-height:1.6;font-size:15px;}
+#passions .passions-lead{color:#9fb2c8;max-width:70%;margin:10px 0 20px;line-height:1.6;font-size:15px;}
 #passions .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
 #passions .tab{appearance:none;cursor:pointer;border:1px solid #1e2a3a;background:#0c1118;color:#e9eef6;padding:8px 14px;border-radius:999px;font-size:14px;}
 #passions .tab.is-active,#passions .tab[aria-selected="true"]{background:#0f1621;border-color:#26364b;}
@@ -100,7 +100,15 @@ nav a:hover{ color:var(--text); }
 #passions .carousel{border:1px solid #1e2a3a;border-radius:16px;background:radial-gradient(100% 150% at 50% 0%,#0f141c,#0a0f16);overflow:hidden;margin-bottom:10px;max-width:720px;margin-inline:auto;}
 #passions .stage{width:100%;height:70vh;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0f141c;border-radius:16px;box-sizing:border-box;overflow:hidden;}
 #passions .stage figure{margin:0;max-width:100%;max-height:calc(100% - 38px);display:flex;align-items:center;justify-content:center;}
-#passions figcaption{text-align:center;color:#a7b7cc;font-size:12px;margin-top:8px;max-width:90%;}
+
+/* Case A: caption inside the figure */
+#passions .stage figure{display:block;margin:0;max-width:100%;max-height:calc(100% - 40px);}
+#passions .stage figure img{display:block;margin:0 auto;width:auto;height:auto;max-width:60%;max-height:70%;object-fit:contain;border-radius:6px;border:4px solid #f5f5f5;box-shadow:0 6px 20px rgba(0,0,0,.35);background:#fff;padding:6px;box-sizing:border-box;}
+#passions .stage figure figcaption{display:block;margin:8px auto 0;text-align:center;color:#a7b7cc;font-size:12px;max-width:60%;}
+
+/* Case B: caption is a sibling of the figure (some carousels do this) */
+#passions .stage>figure{order:1;}
+#passions .stage>figcaption{order:2;display:block;margin:8px auto 0;text-align:center;color:#a7b7cc;font-size:12px;max-width:60%;}
 
 #passions .stage img{width:auto;height:auto;max-width:60%;max-height:100%;object-fit:contain;border-radius:6px;border:4px solid #f5f5f5;box-shadow:0 6px 20px rgba(0,0,0,.35);background:#fff;padding:6px;box-sizing:border-box;}
 
