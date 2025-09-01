@@ -104,6 +104,7 @@ nav a:hover{ color:var(--text); }
 /* Carousel */
 #passions .carousel{ border:1px solid #1e2a3a; border-radius:16px; background:radial-gradient(100% 150% at 50% 0%,#0f141c,#0a0f16); overflow:hidden; margin-bottom:10px; max-width:720px; margin-inline:auto; }
 /* Stage keeps the slide centered */
+/* Stage keeps the slide centered */
 #passions .stage{
   aspect-ratio: 4/3;
   padding: 8px;
@@ -114,18 +115,18 @@ nav a:hover{ color:var(--text); }
 /* Default figures (Sangeet, Kalyanam) — smaller */
 #passions figure{
   margin: 0 auto;
-  max-width: 46%;      /* smaller width */
-  max-height: 60vh;    /* smaller height cap */
+  max-width: 46%;
+  max-height: 60vh;
   text-align: center;
 }
 
-/* Toast & Roast — larger */
-#passions figure.is-large{
-  max-width: 72%;      /* larger width */
-  max-height: 75vh;    /* taller cap */
+/* Toast & Roast — larger (no HTML changes needed) */
+#passions figure:has(img[alt="Toast & Roast"]){
+  max-width: 72%;
+  max-height: 75vh;
 }
 
-/* Images scale inside their figure box, never crop */
+/* Images scale inside their figure box */
 #passions img{
   width: 100%;
   height: auto;
@@ -137,10 +138,10 @@ nav a:hover{ color:var(--text); }
   background: #fff;
 }
 
-/* Mobile tweak so all are comfortably visible */
+/* Mobile */
 @media (max-width: 720px){
   #passions figure{ max-width: 86%; max-height: 62vh; }
-  #passions figure.is-large{ max-width: 92%; max-height: 68vh; }
+  #passions figure:has(img[alt="Toast & Roast"]){ max-width: 92%; max-height: 68vh; }
 }
 
 #passions figcaption{ text-align:center; color:#a7b7cc; font-size:12px; margin-top:6px; }
