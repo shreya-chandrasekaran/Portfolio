@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const DIGITAL = [
     {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Cultural motifs."},
     {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow."},
-    {src:"img/toastParty.jpg", alt:"Digital artwork 3", class="landscape", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative."}
+    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative."}
   ];
   const HAND = [
-    {src:"img/pineapple.jpg", alt:"Handmade artwork 1", class="landscape", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion."},
-    {src:"img/orange.jpg", alt:"Handmade artwork 2", class="landscape", title:"Burnt Orange", caption:"Oil — Glow and contrast."},
-    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", class="landscape", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."},
-    {src:"img/banana.jpg", alt:"Handmade artwork 4", class="landscape", title:"Tender Arc", caption:"Watercolour — Still life study."}
+    {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion."},
+    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast."},
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."},
+    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study."}
   ];
 
   let current = 'digital';
