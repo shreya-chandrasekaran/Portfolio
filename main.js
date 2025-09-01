@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const HAND = [
     {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion."},
     {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast."},
-    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."}
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."},
     {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study."}
   ];
 
