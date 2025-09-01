@@ -103,9 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
     {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative."}
   ];
   const HAND = [
-    {src:"https://picsum.photos/seed/h1/1200/800", alt:"Handmade artwork 1", title:"Ink & Wash", caption:"Handwork — ink + water."},
-    {src:"https://picsum.photos/seed/h2/1200/800", alt:"Handmade artwork 2", title:"Acrylics", caption:"Palette knife study."},
-    {src:"https://picsum.photos/seed/h3/1200/800", alt:"Handmade artwork 3", title:"Graphite", caption:"Value & edge practice."}
+    {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion."},
+    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast."},
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."}
+    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study."}
   ];
 
   let current = 'digital';
