@@ -105,6 +105,11 @@ nav a:hover{ color:var(--text); }
 #passions .stage figure{display:block;margin:0;max-width:100%;max-height:calc(100% - 40px);}
 #passions .stage figure img{display:block;margin:0 auto;width:auto;height:auto;max-width:85%;max-height:85%;object-fit:contain;border-radius:6px;border:4px solid #f5f5f5;box-shadow:0 6px 20px rgba(0,0,0,.35);background:#fff;padding:6px;box-sizing:border-box;}
 #passions .stage figure figcaption{display:block;margin:8px auto 0;text-align:center;color:#a7b7cc;font-size:12px;max-width:80%;}
+/* Landscape boost */
+#passions .stage figure img.landscape {
+  max-width:95%;   /* let wide images stretch out */
+  max-height:70%;  /* keep them balanced */
+}
 
 /* Case B: caption is a sibling of the figure (some carousels do this) */
 #passions .stage>figure{order:1;}
