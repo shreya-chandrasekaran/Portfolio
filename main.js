@@ -1,15 +1,5 @@
 // main.js — site behavior (year, modals, shopping cart toggle, passions)
 
-function tagOrientation(img){
-  const mark=()=>{
-    if(img.naturalWidth > img.naturalHeight){
-      img.classList.add("landscape");
-    }
-  };
-  if(img.complete && img.naturalWidth) mark();
-  else img.addEventListener("load", mark, {once:true});
-}
-
 /* 1) Footer year */
 (() => {
   const y = document.getElementById('year');
@@ -108,15 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Replace with YOUR images + captions
   const DIGITAL = [
-    {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Cultural motifs."},
-    {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow."},
-    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative."}
+    {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Cultural motifs.",  mw:'82%', mh:'80%', op:'50% 52%' },
+    {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow.",  mw:'82%', mh:'80%', op:'50% 52%' },
+    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative.", mw:'70%', mh:'70%', op:'50% 40%'}
   ];
   const HAND = [
-    {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion."},
-    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast."},
-    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction."},
-    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study."}
+    {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion.", mw:'70%', mh:'70%', op:'50% 40%'},
+    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast.", mw:'70%', mh:'70%', op:'50% 40%'},
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction.", mw:'70%', mh:'70%', op:'50% 40%'},
+    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study.", mw:'70%', mh:'70%', op:'50% 40%'}
   ];
 
   let current = 'digital';
@@ -131,8 +121,26 @@ document.addEventListener('DOMContentLoaded', () => {
         <figcaption><strong>${item.title}</strong> — ${item.caption}</figcaption>
       </figure>`;
     renderDots();
-    const img = stage.querySelector("img");
-    tagOrientation(img);
+    function renderSlide(slide){
+      const stage = document.getElementById('stage');
+      stage.innerHTML = '';
+
+      const fig = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = slide.src;
+      img.alt = slide.title;
+
+      // apply size/position via CSS variables:
+      if (slide.mw) img.style.setProperty('--mw', slide.mw);
+      if (slide.mh) img.style.setProperty('--mh', slide.mh);
+      if (slide.op) img.style.setProperty('--op', slide.op);
+
+      const cap = document.createElement('figcaption');
+      cap.innerHTML = `<strong>${slide.title}</strong> — ${slide.caption}`;
+
+      fig.append(img, cap);
+      stage.appendChild(fig);
+    }
 
     // Preload neighbors for snappy arrows
     [i-1, i+1].forEach(k => {
