@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
     playToggle.setAttribute('aria-expanded', String(open));
   });
   
-
   // Init
   setSet('digital');
 })();
