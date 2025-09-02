@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const DIGITAL = [
     {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Cultural motifs.",  mw:'82%', mh:'80%', op:'50% 50%' },
     {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow.",  mw:'82%', mh:'80%', op:'50% 50%' },
-    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative.", mw:'70%', mh:'70%', op:'50% 50%'}
+    {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative.", mw:'70%', mh:'70%', op:'50% 50%'},
+    {src:"img/book.jpg", alt:"Digital artwork 4", title:"Lotus", caption:"Book Cover Design",  mw:'82%', mh:'80%', op:'50% 50%' }
   ];
   const HAND = [
     {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion.", mw:'70%', mh:'70%', op:'50% 50%'},
