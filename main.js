@@ -10,8 +10,6 @@ function tagOrientation(img){
   else img.addEventListener("load", mark, {once:true});
 }
 
-img.style.outline = '2px dashed lime'; // visual proof we're hitting this image
-
 /* 1) Footer year */
 (() => {
   const y = document.getElementById('year');
