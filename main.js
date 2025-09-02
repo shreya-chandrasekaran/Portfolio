@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const HAND = [
     {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion.", mw:'70%', mh:'70%', op:'50% 50%'},
-    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast.", mw:'80%', mh:'70%', op:'50% 50%'},
-    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction.", mw:'80%', mh:'70%', op:'50% 50%'},
-    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study.", mw:'80%', mh:'70%', op:'50% 50%'}
+    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast.", mw:'70%', mh:'70%', op:'50% 50%'},
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction.", mw:'70%', mh:'70%', op:'50% 50%'},
+    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study.", mw:'70%', mh:'70%', op:'50% 50%'}
   ];
 
   let current = 'digital';
