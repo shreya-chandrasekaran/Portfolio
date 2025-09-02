@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
     {src:"img/kalyanam.jpg", alt:"Digital artwork 1", title:"Kalyanam", caption:"Wedding Poster — Cultural motifs.",  mw:'82%', mh:'80%', op:'50% 50%' },
     {src:"img/sangeet.jpg", alt:"Digital artwork 2", title:"Sangeet", caption:"Event Poster — Exploring light & shadow.",  mw:'82%', mh:'80%', op:'50% 50%' },
     {src:"img/toastParty.jpg", alt:"Digital artwork 3", title:"Toast & Roast", caption:"Event Poster — Comic-style narrative.", mw:'70%', mh:'70%', op:'50% 50%'},
-    {src:"img/book.JPEG", alt:"Digital artwork 4", title:"Lotus", caption:"Book Cover Design",  mw:'82%', mh:'80%', op:'50% 50%' }
+    {src:"img/book.JPEG", alt:"Digital artwork 4", title:"Lotus", caption:"Book Cover Design",  mw:'82%', mh:'82%', op:'50% 50%' }
   ];
   const HAND = [
     {src:"img/pineapple.jpg", alt:"Handmade artwork 1", title:"Fragmented Bloom", caption:"Acrylics — Colour & distortion.", mw:'70%', mh:'70%', op:'50% 50%'},
-    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast.", mw:'70%', mh:'70%', op:'50% 50%'},
-    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction.", mw:'70%', mh:'70%', op:'50% 50%'},
-    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study.", mw:'70%', mh:'70%', op:'50% 50%'}
+    {src:"img/orange.jpg", alt:"Handmade artwork 2", title:"Burnt Orange", caption:"Oil — Glow and contrast.", mw:'80%', mh:'70%', op:'50% 50%'},
+    {src:"img/whiskey.jpg", alt:"Handmade artwork 3", title:"Liquid Geometry", caption:"Watercolour — Light & Refraction.", mw:'80%', mh:'70%', op:'50% 50%'},
+    {src:"img/banana.jpg", alt:"Handmade artwork 4", title:"Tender Arc", caption:"Watercolour — Still life study.", mw:'80%', mh:'70%', op:'50% 50%'}
   ];
 
   let current = 'digital';
