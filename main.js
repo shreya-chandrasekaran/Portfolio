@@ -1,5 +1,15 @@
 // main.js — site behavior (year, modals, shopping cart toggle, passions)
 
+function tagOrientation(img){
+  const mark=()=>{
+    if(img.naturalWidth > img.naturalHeight){
+      img.classList.add("landscape");
+    }
+  };
+  if(img.complete && img.naturalWidth) mark();
+  else img.addEventListener("load", mark, {once:true});
+}
+
 /* 1) Footer year */
 (() => {
   const y = document.getElementById('year');
@@ -121,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <figcaption><strong>${item.title}</strong> — ${item.caption}</figcaption>
       </figure>`;
     renderDots();
+    const img = stage.querySelector("img");
+    tagOrientation(img);
 
     // Preload neighbors for snappy arrows
     [i-1, i+1].forEach(k => {
