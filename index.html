@@ -216,24 +216,14 @@
       The current roster: acoustic & electric guitar, mandolin, veena, panduri, harmonica, and kalimba. Some I’ve picked up better than others, but the fun is in the learning.
     </p>
 
-    <h3 class="gallery-title">A little art, a little music. Hit play and enjoy the gallery.</h3>
-    <div class="passions-controls">
-      <div class="tabs" role="tablist" aria-label="Art categories">
-        <button role="tab" id="tab-digital" class="tab is-active" aria-selected="true" aria-controls="panel-digital">Digital</button>
-        <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
-      </div>
-
-      <div class="play">
-        <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false" title="Play playlist">
-          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
-          Bolts and beats
-        </button>
-      </div>
-    </div>
-
-    <div class="spotify-embed" id="spotify">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6obmXQZyAAD8imSZCwJszx?utm_source=generator" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+<!-- Title + tabs on one row -->
+<div class="gallery-header">
+  <h3 class="gallery-title">A little art, a little music. Hit play and enjoy the gallery.</h3>
+  <div class="tabs" role="tablist" aria-label="Art categories">
+    <button role="tab" id="tab-digital" class="tab is-active" aria-selected="true" aria-controls="panel-digital">Digital</button>
+    <button role="tab" id="tab-hand" class="tab" aria-selected="false" aria-controls="panel-hand">Handwork</button>
+  </div>
+</div>
     
     <!-- Carousel -->
     <div class="carousel">
@@ -250,6 +240,24 @@
     </div>
   </div>
 </section>
+
+<!-- Footer controls under the gallery -->
+<div class="gallery-footer">
+  <button class="play-btn" id="playToggle" aria-controls="spotify" aria-expanded="false" title="Play playlist">
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
+    Bolts and beats
+  </button>
+</div>
+
+<!-- Keep the embed directly below the footer so it opens under the button -->
+<div class="spotify-embed" id="spotify">
+  <iframe data-testid="embed-iframe" style="border-radius:12px" 
+          src="https://open.spotify.com/embed/playlist/6obmXQZyAAD8imSZCwJszx?utm_source=generator" 
+          width="50%" height="152" frameBorder="0" allowfullscreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"></iframe>
+</div>
+
 
 <section id="contact" class="section">
   <div class="container" style="text-align:center; margin-top:40px;">
