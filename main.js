@@ -182,6 +182,21 @@ function renderSlide() {
     const open = spotify.classList.toggle('is-open');
     playToggle.setAttribute('aria-expanded', String(open));
   });
+
+// Projects dropdown: click/tap toggle + outside click close
+document.addEventListener('click', e => {
+  const dd = e.target.closest('.dropdown');
+  // close all
+  document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+  if (!dd) return;
+  // if you clicked the button, toggle this one
+  if (e.target.closest('.dropbtn')) {
+    dd.classList.toggle('open');
+    e.stopPropagation();
+  }
+});
+
+
   
   
   // Init
