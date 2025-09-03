@@ -143,3 +143,42 @@ nav a:hover{ color:var(--text); }
   .card model-viewer,.media-img{ height:220px; }
 }
 
+/* === Gallery image frame + sizing === */
+#passions .stage {
+  /* keep one consistent stage box */
+  height: 68vh;
+  min-height: 460px;
+}
+
+#passions .stage figure{
+  /* center content and prevent layout jump */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#passions .stage img{
+  /* use your optional per-slide hints; otherwise fall back */
+  width: var(--mw, min(82%, 560px));
+  max-width: 90%;
+  max-height: var(--mh, 58vh);
+  height: auto;
+
+  object-fit: contain;
+  object-position: var(--op, 50% 50%);
+
+  /* the white frame you had before */
+  border: 10px solid #e8eaf0;         /* light text color = white-ish */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+
+  /* subtle backdrop so transparent PNGs still read */
+  background:#0b0c10;
+}
+
+/* tighter caption spacing below framed image */
+#passions .stage figcaption{
+  margin-top: 10px;
+  font-size: 13px;
+}
