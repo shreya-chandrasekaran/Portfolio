@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camera Clip CDS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Extra styles just for PDF embed pages */
+    .pdf-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .pdf-container iframe {
+      width: 100%;
+      min-height: 80vh;  /* responsive height */
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    }
+    @media (max-width: 600px) {
+      .pdf-container iframe {
+        min-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Reuse your site header -->
+  <header class="site-header">
+    <div class="container">
+      <h1>Camera Clip — CDS Document</h1>
+      <nav>
+        <a href="index.html">← Back to Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pdf-container">
+    <!-- Replace FILE_ID with your Google Drive file ID -->
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview"
+            allow="autoplay"></iframe>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Shreya Chandrasekaran</small>
+    </div>
+  </footer>
+
+  <script>
+    // Set footer year automatically
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
