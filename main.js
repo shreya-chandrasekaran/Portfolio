@@ -114,53 +114,38 @@ document.addEventListener('DOMContentLoaded', () => {
   let i = 0;
   const data = () => (current === 'digital' ? DIGITAL : HAND);
 
-  function renderSlide() {
-    const item = data()[i];
-    stage.innerHTML = `
-      <figure>
-        <img src="${item.src}" alt="${item.alt}" loading="lazy" />
-        <figcaption><strong>${item.title}</strong> — ${item.caption}</figcaption>
-      </figure>`;
-    renderDots();
-    function renderSlide(slide){
-      const stage = document.getElementById('stage');
-      stage.innerHTML = '';
+ function renderSlide() {
+  const slide = data()[i];
 
-      const fig = document.createElement('figure');
-      const img = document.createElement('img');
-      img.src = slide.src;
-      img.alt = slide.title;
+  // build DOM (so we can set CSS variables on the <img>)
+  stage.innerHTML = '';
+  const fig = document.createElement('figure');
 
-      // apply size/position via CSS variables:
-      if (slide.mw) img.style.setProperty('--mw', slide.mw);
-      if (slide.mh) img.style.setProperty('--mh', slide.mh);
-      if (slide.op) img.style.setProperty('--op', slide.op);
+  const img = document.createElement('img');
+  img.src = slide.src;
+  img.alt = slide.alt || slide.title || 'Artwork';
 
-      const cap = document.createElement('figcaption');
-      cap.innerHTML = `<strong>${slide.title}</strong> — ${slide.caption}`;
+  // per-slide sizing hints -> CSS variables (picked up by CSS above)
+  if (slide.mw) img.style.setProperty('--mw', slide.mw);
+  if (slide.mh) img.style.setProperty('--mh', slide.mh);
+  if (slide.op) img.style.setProperty('--op', slide.op);
 
-      fig.append(img, cap);
-      stage.appendChild(fig);
-    }
+  const cap = document.createElement('figcaption');
+  cap.innerHTML = `<strong>${slide.title}</strong> — ${slide.caption}`;
 
-    // Preload neighbors for snappy arrows
-    [i-1, i+1].forEach(k => {
-      const j = (k + data().length) % data().length;
-      const img = new Image(); img.src = data()[j].src;
-    });
-  }
+  fig.append(img, cap);
+  stage.appendChild(fig);
 
-  function renderDots() {
-    dots.innerHTML = '';
-    data().forEach((_, idx) => {
-      const d = document.createElement('button');
-      d.className = 'dot';
-      d.setAttribute('aria-current', idx === i ? 'true' : 'false');
-      d.setAttribute('aria-label', `Go to slide ${idx+1}`);
-      d.addEventListener('click', () => { i = idx; renderSlide(); });
-      dots.appendChild(d);
-    });
-  }
+  // dots
+  renderDots();
+
+  // preload neighbors for snappier nav
+  [i - 1, i + 1].forEach(k => {
+    const j = (k + data().length) % data().length;
+    const preload = new Image();
+    preload.src = data()[j].src;
+  });
+ }
 
   function setSet(which) {
     current = which;
