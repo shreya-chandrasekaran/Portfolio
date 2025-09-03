@@ -228,3 +228,10 @@ nav a:hover{ color:var(--text); }
   position: relative;
   display: inline-block;
 }
+
+@media (max-width: 600px) {
+  .site-header nav {
+    gap: 12px;
+    font-size: 14px;  /* shrink text slightly */
+  }
+}
