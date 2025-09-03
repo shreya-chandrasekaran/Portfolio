@@ -20,15 +20,18 @@
   <header class="site-header">
     <div class="container">
       <h1>Shreya Chandrasekaran</h1>
-      <nav>
+      <nav class="site-nav">
         <div class="dropdown">
-          <button class="dropbtn">Projects ▾</button>
-          <div class="dropdown-content">
-            <a href="project1.html" target="_blank">Camera Clip CDS</a>
-            <a href="project2.html" target="_blank">Fall Detection CDS</a>
-            <a href="project3.html" target="_blank">Wayfinding CDS</a>
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+            Projects ▾
+          </button>
+          <div class="dropdown-content" role="menu">
+            <a role="menuitem" href="project1.html">Camera Clip CDS</a>
+            <a role="menuitem" href="project2.html">Fall Detection CDS</a>
+            <a role="menuitem" href="project3.html">Wayfinding CDS</a>
           </div>
         </div>
+        
         <a href="#passions">Passions</a>
         <a href="#contact">Contact</a>
       </nav>
