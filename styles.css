@@ -264,3 +264,13 @@ nav a:hover{ color:var(--text); }
   display: inline-block;
   border-radius: 10px;
 }
+
+#lightbox::backdrop { background: rgba(0,0,0,.7); }
+#lightbox { border: none; padding: 0; background: transparent; }
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
