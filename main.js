@@ -114,38 +114,45 @@ document.addEventListener('DOMContentLoaded', () => {
   let i = 0;
   const data = () => (current === 'digital' ? DIGITAL : HAND);
 
- function renderSlide() {
+function renderSlide() {
   const slide = data()[i];
 
-  // build DOM (so we can set CSS variables on the <img>)
+  // clear stage
   stage.innerHTML = '';
+
+  // figure
   const fig = document.createElement('figure');
 
+  // white frame wrapper so any extra space is WHITE, not dark
+  const frame = document.createElement('div');
+  frame.className = 'art-frame';
+
+  // image
   const img = document.createElement('img');
   img.src = slide.src;
   img.alt = slide.alt || slide.title || 'Artwork';
 
-  // per-slide sizing hints -> CSS variables (picked up by CSS above)
+  // per-slide sizing hints -> CSS vars
   if (slide.mw) img.style.setProperty('--mw', slide.mw);
   if (slide.mh) img.style.setProperty('--mh', slide.mh);
   if (slide.op) img.style.setProperty('--op', slide.op);
 
+  frame.appendChild(img);
+
+  // caption
   const cap = document.createElement('figcaption');
   cap.innerHTML = `<strong>${slide.title}</strong> — ${slide.caption}`;
 
-  fig.append(img, cap);
+  fig.append(frame, cap);
   stage.appendChild(fig);
 
-  // dots
+  // dots + preload neighbors
   renderDots();
-
-  // preload neighbors for snappier nav
   [i - 1, i + 1].forEach(k => {
     const j = (k + data().length) % data().length;
-    const preload = new Image();
-    preload.src = data()[j].src;
+    new Image().src = data()[j].src;
   });
- }
+}
 
   function setSet(which) {
     current = which;
