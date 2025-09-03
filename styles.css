@@ -235,3 +235,32 @@ nav a:hover{ color:var(--text); }
     font-size: 14px;  /* shrink text slightly */
   }
 }
+
+/* Center dialogs + backdrop dim */
+.modal::backdrop { background: rgba(0,0,0,.65); }
+
+/* Keep dialogs nicely centered and not too wide */
+.modal .modal-inner {
+  margin: 0 auto;
+  max-width: min(92vw, 900px);
+}
+
+/* Lightbox image sizing */
+#img-lightbox img {
+  max-width: min(92vw, 1100px);
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+/* Center video and make it smaller */
+.modal .video-wrap { text-align: center; }
+.modal .video-wrap video {
+  width: min(80vw, 720px);   /* smaller on screen */
+  height: auto;
+  max-height: 80vh;
+  display: inline-block;
+  border-radius: 10px;
+}
