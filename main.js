@@ -202,3 +202,42 @@ document.addEventListener('click', e => {
   // Init
   setSet('hand');
 })();
+
+// Projects dropdown: tap-to-open on mobile, click-to-scroll on desktop
+(() => {
+  const dd = document.querySelector('.dropdown');
+  const trigger = dd?.querySelector('.dropbtn');
+  if (!dd || !trigger) return;
+
+  const isTouchOrSmall = () =>
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0) ||
+    window.matchMedia('(max-width: 900px)').matches;
+
+  // Click handler for the "Projects" link
+  trigger.addEventListener('click', (e) => {
+    if (!isTouchOrSmall()) {
+      // Desktop: let it navigate to #projects
+      return;
+    }
+    // Mobile/small: first tap opens menu (don’t navigate yet)
+    if (!dd.classList.contains('open')) {
+      e.preventDefault();
+      dd.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    } else {
+      // Second tap: close and allow navigation to #projects
+      dd.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+      // no preventDefault -> browser follows href="#projects"
+    }
+  });
+
+  // Close if you tap/click outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      dd.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
