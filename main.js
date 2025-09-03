@@ -185,5 +185,5 @@ function renderSlide() {
   
   
   // Init
-  setSet('digital');
+  setSet('hand');
 })();
