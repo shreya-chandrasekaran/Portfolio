@@ -1,1 +1,0 @@
-Optional PDFs (drawings, boards, schematics). Link from index.html if used.
