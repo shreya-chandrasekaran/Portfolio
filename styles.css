@@ -213,3 +213,18 @@ nav a:hover{ color:var(--text); }
 #projects, #passions, #contact {
   scroll-margin-top: calc(var(--header-h) + 8px);
 }
+
+/* Ensure nav stays in one row */
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;              /* space between links */
+  flex-wrap: nowrap;      /* don’t let them wrap */
+  white-space: nowrap;    /* prevent text from breaking onto new line */
+}
+
+/* Dropdown behaves inline with others */
+.site-header .dropdown {
+  position: relative;
+  display: inline-block;
+}
