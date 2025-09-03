@@ -207,3 +207,9 @@ nav a:hover{ color:var(--text); }
 /* Embed hidden until toggled */
 #spotify { display: none; margin-top: 8px; }
 #spotify.is-open { display: block; }
+
+/* Make in-page anchors stop *below* the sticky header */
+:root { --header-h: 72px; }           /* tweak if your header is taller/shorter */
+#projects, #passions, #contact {
+  scroll-margin-top: calc(var(--header-h) + 8px);
+}
