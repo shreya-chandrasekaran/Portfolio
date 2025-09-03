@@ -278,7 +278,7 @@ document.addEventListener('click', e => {
       e.clientY >= rect.top && e.clientY <= rect.bottom;
     if (!clickInside) dlg.close();
   });
-
+  
   // Close on Escape is handled by <dialog> natively
 })();
 
