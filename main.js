@@ -281,3 +281,17 @@ document.addEventListener('click', e => {
 
   // Close on Escape is handled by <dialog> natively
 })();
+
+document.querySelectorAll('.gallery img, .art-studio img')
+  .forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      const dlg = document.getElementById('lightbox');
+      const dlgImg = document.getElementById('lightbox-img');
+      dlgImg.src = img.src;
+      dlg.showModal();
+    });
+  });
+
+document.getElementById('lightbox')
+  .addEventListener('click', e => e.currentTarget.close());
