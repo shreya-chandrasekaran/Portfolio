@@ -241,3 +241,43 @@ document.addEventListener('click', e => {
   });
 })();
 
+/* 3) Image Lightbox for Art Studio + Gallery */
+(() => {
+  const dlg = document.getElementById('img-lightbox');
+  const imgEl = document.getElementById('lightbox-img');
+  const capEl = document.getElementById('lightbox-caption');
+  if (!dlg || !imgEl) return;
+
+  // Adjust these selectors to match your markup:
+  const selectors = [
+    '.art-studio img',
+    '.gallery img',
+    '.handmade-gallery img',
+    '.digital-gallery img'
+  ].join(',');
+
+  // Delegate clicks on images
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest(selectors);
+    if (!img) return;
+
+    // Prefer full-size if you use srcset; otherwise use img.src
+    imgEl.src = img.currentSrc || img.src;
+    imgEl.alt = img.alt || '';
+    if (capEl) capEl.textContent = img.alt || '';
+
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+  });
+
+  // Close on backdrop click
+  dlg.addEventListener('click', (e) => {
+    const rect = dlg.querySelector('.modal-inner')?.getBoundingClientRect();
+    if (!rect) return;
+    const clickInside =
+      e.clientX >= rect.left && e.clientX <= rect.right &&
+      e.clientY >= rect.top && e.clientY <= rect.bottom;
+    if (!clickInside) dlg.close();
+  });
+
+  // Close on Escape is handled by <dialog> natively
+})();
