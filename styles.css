@@ -151,3 +151,29 @@ nav a:hover{ color:var(--text); }
   :root{ --card-title:15px; --card-text:13.5px; }
   .card model-viewer,.media-img{ height:220px; }
 }
+
+/* Title + tabs aligned */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 12px;
+}
+
+.gallery-title {
+  font-size: 20px;   /* smaller than before */
+  font-weight: 600;
+  margin: 0;
+  color: #e9eef6;
+}
+
+/* Playlist footer aligned with container */
+.gallery-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+/* Embed hidden until toggled */
+#spotify { display: none; margin-top: 8px; }
+#spotify.is-open { display: block; }
