@@ -252,16 +252,3 @@ function renderSlide() {
 
     if (typeof dlg.showModal === 'function') dlg.showModal();
   });
-
-  // Close on backdrop click
-  dlg.addEventListener('click', (e) => {
-    const rect = dlg.querySelector('.modal-inner')?.getBoundingClientRect();
-    if (!rect) return;
-    const clickInside =
-      e.clientX >= rect.left && e.clientX <= rect.right &&
-      e.clientY >= rect.top && e.clientY <= rect.bottom;
-    if (!clickInside) dlg.close();
-  });
-  
-  // Close on Escape is handled by <dialog> natively
-})();
