@@ -182,22 +182,6 @@ function renderSlide() {
     const open = spotify.classList.toggle('is-open');
     playToggle.setAttribute('aria-expanded', String(open));
   });
-
-// Projects dropdown: click/tap toggle + outside click close
-document.addEventListener('click', e => {
-  const dd = e.target.closest('.dropdown');
-  // close all
-  document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-  if (!dd) return;
-  // if you clicked the button, toggle this one
-  if (e.target.closest('.dropbtn')) {
-    dd.classList.toggle('open');
-    e.stopPropagation();
-  }
-});
-
-
-  
   
   // Init
   setSet('hand');
@@ -280,72 +264,4 @@ document.addEventListener('click', e => {
   });
   
   // Close on Escape is handled by <dialog> natively
-})();
-
-document.querySelectorAll('.gallery img, .art-studio img')
-  .forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-      const dlg = document.getElementById('lightbox');
-      const dlgImg = document.getElementById('lightbox-img');
-      dlgImg.src = img.src;
-      dlg.showModal();
-    });
-  });
-
-document.getElementById('lightbox')
-  .addEventListener('click', e => e.currentTarget.close());
-
-// Ultra-small image lightbox (works even if images load later)
-(() => {
-  const ready = fn =>
-    document.readyState !== 'loading'
-      ? fn()
-      : document.addEventListener('DOMContentLoaded', fn);
-
-  ready(() => {
-    // 1) Ensure dialog exists
-    let dlg = document.getElementById('lightbox');
-    if (!dlg) {
-      dlg = document.createElement('dialog');
-      dlg.id = 'lightbox';
-      dlg.innerHTML = '<img id="lightbox-img" alt="" />';
-      document.body.appendChild(dlg);
-    }
-    const imgEl = dlg.querySelector('#lightbox-img');
-
-    // 2) Inject minimal CSS once
-    if (!document.getElementById('lightbox-css')) {
-      const css = document.createElement('style');
-      css.id = 'lightbox-css';
-      css.textContent = `
-        #lightbox::backdrop{background:rgba(0,0,0,.7)}
-        #lightbox{border:none;padding:0;background:transparent}
-        #lightbox img{max-width:90vw;max-height:90vh;display:block;margin:auto;border-radius:10px}
-        img[data-zoom]{cursor:zoom-in}
-      `;
-      document.head.appendChild(css);
-    }
-
-    // 3) Delegate clicks for images (add more classes if needed)
-    const SEL = 'img[data-zoom], .gallery img, .art-studio img, .handmade-gallery img, .digital-gallery img';
-    document.addEventListener('click', (e) => {
-      const img = e.target.closest(SEL);
-      if (!img) return;
-
-      // Stop link navigation if <a><img></a>
-      const a = img.closest('a');
-      if (a) e.preventDefault();
-
-      imgEl.src = img.currentSrc || img.src;
-      dlg.showModal?.();
-    });
-
-    // 4) Close when clicking backdrop
-    dlg.addEventListener('click', (e) => {
-      const r = imgEl.getBoundingClientRect();
-      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
-      if (!inside) dlg.close();
-    });
-  });
 })();
