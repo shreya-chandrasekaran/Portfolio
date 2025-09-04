@@ -9,11 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <script type="module">
-    if (!customElements.get('model-viewer')) {
-      import('https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js');
-    }
-  </script>
 
 </head>
 <body>
@@ -375,10 +370,6 @@
       <p id="lightbox-caption" class="muted small"></p>
     </div>
   </div>
-</dialog>
-
-<dialog id="lightbox">
-  <img id="lightbox-img" alt="" />
 </dialog>
 
 </body>
