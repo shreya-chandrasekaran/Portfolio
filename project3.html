@@ -6,7 +6,6 @@
   <title>Wayfinding CDS</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Extra styles just for PDF embed pages */
     .pdf-container {
       max-width: 900px;
       margin: 40px auto;
@@ -14,7 +13,7 @@
     }
     .pdf-container iframe {
       width: 100%;
-      min-height: 80vh;  /* responsive height */
+      min-height: 80vh;
       border: none;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,.3);
@@ -27,7 +26,6 @@
   </style>
 </head>
 <body>
-  <!-- Reuse your site header -->
   <header class="site-header">
     <div class="container">
       <h1>Wayfinding — Conceptual Design Specifications</h1>
@@ -41,7 +39,6 @@
   </header>
 
   <main class="pdf-container">
-    <!-- Replace FILE_ID with your Google Drive file ID -->
     <iframe src="https://drive.google.com/file/d/1RTMf4FRlX3f9yDW2JoGXgpBDUAIO1I1M/preview"
             allow="autoplay"></iframe>
   </main>
@@ -53,7 +50,6 @@
   </footer>
 
   <script>
-    // Set footer year automatically
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
   </script>
